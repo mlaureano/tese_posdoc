@@ -1,0 +1,35 @@
+\section{Inclusão de arquivos}%
+\label{sect:files-incl}
+
+Dividir o documento em diversos arquivos-fonte, ao invés de somente escrever tudo em um único, é uma prática bastante recomendável.
+Esse recurso foi usado no documento, onde diversos arquivos são devidamente incluídos no principal arquivo-fonte (ver \texttt{./utfpr-thesis.tex}).
+
+Para incluir diferentes arquivos em um arquivo-fonte (principal), de modo que cada arquivo incluído fique em página{(s)} distinta{(s)}, ou seja, com quebra de páginas, como em seções primárias, usa-se o comando:
+
+\begin{snugshade}
+\begin{Verbatim}
+\include{file-to-include}%% Sem a extensão tex
+\end{Verbatim}
+\end{snugshade}
+
+Para controlar quais arquivos são lidos pelo \ifbool{MakeGly}{\gly*{LaTeX}}{\LaTeX} nos comandos \ColorBox{shadecolor}{\texttt{{\textbackslash}include}} subsequentes, usa-se o seguinte comando no preâmbulo do documento:
+
+\begin{snugshade}
+\begin{Verbatim}
+\includeonly{%
+  file-1-to-include,%% Arquivo 1 (sem a extensão tex)
+  file-2-to-include,%% Arquivo 2 (sem a extensão tex)
+  file-3-to-include,%% Arquivo 3 (sem a extensão tex)
+}
+\end{Verbatim}
+\end{snugshade}
+
+\noindent Onde no argumento deste comando são adicionados os nomes de arquivos separados por vírgulas.
+
+Para incluir arquivos sem quebra de páginas, como em seções secundárias, usa-se o comando:
+
+\begin{snugshade}
+\begin{Verbatim}
+\input{file-to-include}%% Sem a extensão tex
+\end{Verbatim}
+\end{snugshade}

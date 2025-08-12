@@ -1,0 +1,123 @@
+%%%% ELEMENTOS PRÉ-TEXTUAIS
+%%
+%% Parte que antecede o texto com informações que ajudam na identificação e na
+%% utilização do trabalho.
+
+%% Folha de Rosto
+%% Contém os elementos essenciais à identificação do trabalho, assim como uma
+%% Licença Creative Commons (CC) (https://creativecommons.org/choose/):
+%% - {TitlePage*} aplica caixa alta no título em idioma secundário.
+\begin{TitlePage}%% Argumentos (4):
+[BY]%% Tipo de licença (BY, BY-SA, BY-ND, BY-NC, BY-NC-SA ou BY-NC-ND)
+% [\YearNum]%% Ano de criação (formato CC)
+% [P. Sobrenome-A1]%% Criador(es) do documento (formato CC)
+% [Texto da licença]%% Substitui o texto padrão de cada tipo (formato UTFPR)
+%%%% Descrição do trabalho (padrão; alterar se necessário)
+\DocumentTypeName\ apresentad\ifbool{Graduate}{a}{o} como requisito para obtenção do título de \StudentsTitlesList\ em \CourseName\ da \ifbool{MakeAcr}{\intldescr{UTFPR} (\intl{UTFPR})}{\UTFPRName\ (UTFPR)}\ifbool{DScOrMSc}{. Área de Concentração: Nome da Área}{}.
+%%%% Orientador(es) (de 1 a 3): {Número}; {Dados}
+% \Advisor{1}{%
+%   Gender   = {Male},%% Ou {Female}
+%   Title    = {\ProfCall\ \PhDCall},%% {\<Prof/PhD/DSc/MSc/Eng>Call}
+%   Fullname = {Prenome{(s)} Sobrenome-B1},%% Conforme o Currículo Lattes
+%   Email    = {advisor1@domain},%% Opcional
+%   Lattes   = {0000000000020001},%% Opcional
+%   ORCID    = {0000-0000-0002-0001},%% Opcional (CHKTEX 8)
+% }
+%%%% Ficha catalográfica (somente para Teses e Dissertações em catálogo físico):
+%%%% - [Local do PDF] (pasta padrão ./Pre-Textual/Extras/);
+%%%% - {Nome do PDF} (modelo em ./Pre-Textual/Extras/).
+% \IndexCardPDF{doc-index-card.pdf}
+\end{TitlePage}
+
+%% Errata (elemento opcional; editar o {Arquivo} para alterar)
+% \input{./Pre-Textual/Optionals/errata}
+
+%% Folha de Aprovação
+%% Contém os elementos essenciais à aprovação do trabalho (sem as assinaturas).
+%%%% Opção 1 (gerada por meio do pacote utfpr-thesis):
+%%%% - {ApprovalPage*} insere a titulação após o nome do membro da banca.
+\begin{ApprovalPage}%% Argumentos (4):
+% [brazilian]%% Idioma original ou primário (brazilian ou english)
+% [DD de mmmmmm de YYYY]%% Data de defesa (dia, mês por extenso e ano)
+% [DD/MM/YYYY]%% Data de defesa (forma abreviada para mestrado e doutorado)
+% [\textwidth]%% Largura de linha de assinatura (graduação e especialização)
+%%%%%% Descrição do trabalho (padrão; alterar se necessário)
+\DocumentTypeName\ apresentad\ifbool{Graduate}{a}{o} como requisito para obtenção do título de \StudentsTitlesList\ em \CourseName\ da \ifbool{MakeAcr}{\intldescr{UTFPR} (\intl{UTFPR})}{\UTFPRName\ (UTFPR)}\ifbool{DScOrMSc}{. Área de Concentração: Nome da Área}{}.
+%%%%%% Membro(s) da Banca Examinadora (de 3 a 6): {Número}; {Dados}
+% \Member{1}{%
+%   Gender      = {Male},%% Ou {Female}
+%   Title       = {\ProfCall\ \PhDCall},%% {\<Prof/PhD/DSc/MSc/Eng>Call}
+%   Fullname    = {Prenome{(s)} Sobrenome-C1},%% Conforme o Currículo Lattes
+%   Lattes      = {0000000000030001},%% Opcional
+%   ORCID       = {0000-0000-0003-0001},%% Opcional (CHKTEX 8)
+%   Institution = {Instituição (Membro-C1)},%% Nome completo e por extenso
+% }
+% \Member{2}{%
+%   Gender      = {Male},%% Ou {Female}
+%   Title       = {\ProfCall\ \PhDCall},%% {\<Prof/PhD/DSc/MSc/Eng>Call}
+%   Fullname    = {Prenome{(s)} Sobrenome-C2},%% Conforme o Currículo Lattes
+%   Lattes      = {0000000000030002},%% Opcional
+%   ORCID       = {0000-0000-0003-0002},%% Opcional (CHKTEX 8)
+%   Institution = {Instituição (Membro-C2)},%% Nome completo e por extenso
+% }
+% \Member{3}{%
+%   Gender      = {Male},%% Ou {Female}
+%   Title       = {\ProfCall\ \PhDCall},%% {\<Prof/PhD/DSc/MSc/Eng>Call}
+%   Fullname    = {Prenome{(s)} Sobrenome-C3},%% Conforme o Currículo Lattes
+%   Lattes      = {0000000000030003},%% Opcional
+%   ORCID       = {0000-0000-0003-0003},%% Opcional (CHKTEX 8)
+%   Institution = {Instituição  (Membro-C3)},%% Nome completo e por extenso
+% }
+\end{ApprovalPage}
+%%%% Opção 2 (gerada a partir do Sistema Acadêmico ou da secretaria):
+%%%% - [Local do PDF] (pasta padrão ./Pre-Textual/Extras/);
+%%%% - {Nome do PDF} (modelos em ./Pre-Textual/Extras/).
+% \ApprovalPagePDF{doc-approval-page.pdf}
+
+%% Dedicatória (elemento opcional; editar o {Arquivo} para alterar)
+% \input{./Pre-Textual/Optionals/dedication}
+
+%% Agradecimentos (elemento opcional; editar o {Arquivo} para alterar)
+% \input{./Pre-Textual/Optionals/acknowledgments}
+
+%% Epígrafe (elemento opcional; editar o {Arquivo} para alterar)
+% \input{./Pre-Textual/Optionals/epigraph}
+
+%% Resumo
+%% Apresentação concisa dos pontos relevantes de um texto, fornecendo uma visão
+%% rápida e clara do conteúdo e das conclusões do trabalho:
+%% - {Abstract*} insere a autorreferência do documento.
+%%%% Chamada das Palavras-chave (opcional): {Estilo}
+% \KeywordsCallFormat{\bfseries}%% Texto normal por padrão
+%%%% Palavras-chave (de 3 a 6): {Número}; {Português}; {English}
+% \Keyword{1}{palavra-chave 1}{keyword 1}
+% \Keyword{2}{palavra-chave 2}{keyword 2}
+% \Keyword{3}{palavra-chave 3}{keyword 3}
+%%%% Contato (opção do pacote utfpr-thesis: Version = Abstract): {e-mail}
+% \ContactEmail{student1@domain}
+%%%% Em língua vernácula (idioma primário)
+\begin{Abstract}%% Argumentos (2):
+[brazilian]%% Idioma (brazilian ou english)
+% [brazilian]%% Idioma da autorreferência do documento (brazilian ou english)
+O resumo deve ser redigido na terceira pessoa do singular, com verbo na voz ativa, não ultrapassando uma página (de 150 a 500 palavras, conforme a norma vigente).
+Evitar o uso de parágrafos no resumo, assim como abreviaturas, caracteres especiais, citações, equações, fórmulas e símbolos.
+Iniciar o resumo situando o trabalho no contexto geral, apresentar os objetivos, descrever a metodologia adotada, relatar a contribuição, comentar os resultados obtidos e apresentar finalmente as conclusões mais importantes do trabalho.
+As palavras-chave devem aparecer logo após o resumo, antecedidas da expressão \KeywordsCall, seguida de dois pontos, e separadas entre si por ponto e vírgula e finalizadas por ponto.
+As palavras-chave devem ser grafadas com inicial minúscula, exceto nomes próprios ou científicos.
+Por exemplo, \enquote{\KeywordsCall: gestação; Aedes aegypti; \ifbool{MakeAcr}{\intl{UTFPR}}{UTFPR}; Brasil.}.
+Para definição das palavras-chave (e suas correspondentes em inglês no Abstract), consultar em Termo tópico do Catálogo de Autoridades da Biblioteca Nacional, disponível em: \url{https://acervo.bn.gov.br/sophia_web}.
+Para editar o resumo e as palavras-chave, usar o arquivo \texttt{pre-textual.tex} em \texttt{./Pre-Textual/}.
+\end{Abstract}
+%%%% Em língua estrangeira (idioma secundário; para divulgação internacional)
+\begin{Abstract}%% Argumentos (2):
+[english]%% Idioma (brazilian ou english)
+% [english]%% Idioma da autorreferência do documento (brazilian ou english)
+The abstract should be drafted in the third-person singular with the verb in the active voice, at most one page (from 150 to 500 words, in accordance with the current regulation).
+Avoid using paragraphs in the abstract, as well as abbreviations, special characters, quotes, equations, formulas, and symbols.
+Initiate the abstract by setting the work in the general context, presenting the objectives, describing the methodology adopted, reporting the self-contribution, commenting on the results, and finally presenting the work's most relevant conclusions.
+The keywords should appear after the abstract, preceded by the expression \KeywordsCall, followed by a colon, separated from each other by a semicolon, and ending with a period.
+The keywords must be written with a lowercase initial, except for proper or scientific names.
+For example, \enquote{\KeywordsCall: pregnancy; Aedes aegypti; \ifbool{MakeAcr}{\intl{UTFPR}}{UTFPR}; Brazil.}.
+To define the keywords (and their corresponding Portuguese in the Resumo), query the Authorities Catalog Topic term in the National Library, available at: \url{https://acervo.bn.gov.br/sophia_web}.
+To edit the abstract and keywords, use the file \texttt{pre-textual.tex} in \texttt{./Pre-Textual/}.
+\end{Abstract}

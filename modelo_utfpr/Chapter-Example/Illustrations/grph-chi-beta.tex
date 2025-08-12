@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\begin{document}
+\setlength{\unitlength}{1cm}
+\begin{picture} (8, 5) (-4, -2.5)
+\put (-4, 0)   {\vector (1, 0) {8}}
+\put (0, -2.5) {\vector (0, 1) {5}}
+\multiput (-4, 1)  (0.4, 0) {20} {\line (1, 0) {0.2}}
+\multiput (-4, -1) (0.4, 0) {20} {\line (1, 0) {0.2}}
+\put (3.75, -0.25) {$\chi$}
+\put (0.25, 2.25)  {$\beta \equiv v / c = \tanh \chi$}
+\qbezier (0, 0) (0.8853, 0.8853)   (2, 0.9640)
+\qbezier (0, 0) (-0.8853, -0.8853) (-2, -0.9640)
+\end{picture}
+\end{document}

@@ -1,0 +1,19 @@
+\section{Referências}%
+\label{sect:ref}
+
+A formatação das \refref\ conforme a \textcite[\ifbool{MakeAcr}{\intl{NBR}}{NBR} 6023]{ABNT2018NBR6023} é um dos principais objetivos deste modelo\footnote{\href{https://github.com/abntex/biblatex-abnt/issues/42}{Modificações da norma vigente\LinkIcon} devem estar em uma versão $\ge$ 3.5 do \href{https://ctan.org/pkg/biblatex-abnt}{\ifbool{MakeGly}{\gly*{BibLaTeXabnt}}{Bib\LaTeX-abnt}\LinkIcon}}.
+Isto é feito usando os pacotes \href{https://ctan.org/pkg/biblatex}{\ifbool{MakeGly}{\gly*{BibLaTeX}}{Bib\LaTeX}\LinkIcon} e \href{https://ctan.org/pkg/biblatex-abnt}{\ifbool{MakeGly}{\gly*{BibLaTeXabnt}}{Bib\LaTeX-abnt}\LinkIcon}, cujos manuais fornecem informações sobre configuração e utilização.
+
+\ifbool{MakeGly}{\gly*{LaTeX}}{\LaTeX} pode usar arquivos de banco de dados (entradas) das \refref\ citadas no texto, geralmente obtidos na própria página de acesso ou \ENLang{download} da publicação (artigos, livros, etc.) ou, ainda, a partir do Google Acadêmico, etc.
+Estes arquivos (\texttt{*.bib}) são compilados pelo \ifbool{MakeGly}{\gly*{BibTeX}}{Bib\TeX} (ou \ifbool{MakeGly}{\gly*{biber}}{biber} por padrão, no caso do \href{https://ctan.org/pkg/biblatex}{\ifbool{MakeGly}{\gly*{BibLaTeX}}{Bib\LaTeX}\LinkIcon}), como os arquivos \texttt{references.bib} e \texttt{references-examples.bib} presentes em \texttt{./Post-Textual/}.
+Diversas ferramentas podem ser usadas para gerar ou editar entradas de tais arquivos, por exemplo: \ENLang{\href{https://zbib.org/}{ZoteroBib\LinkIcon} e \href{https://truben.no/latex/bibtex/}{\ifbool{MakeGly}{\gly*{BibTeX}}{Bib\TeX} Editor\LinkIcon}}.
+Além disso, há alguns aplicativos para gerenciamento de \refref, como \href{https://www.jabref.org/}{JabRef\LinkIcon}.
+
+\subsection{Acentuação em referências}%
+\label{ssect:accnt-ref}
+
+Normalmente, não há problemas em usar caracteres acentuados em arquivos de base bibliográfica (extensão \texttt{bib}).
+Contudo, como as regras da \ifbool{MakeAcr}{\intl{ABNT}}{ABNT} fazem uso quase abusivo da conversão para letras em maiúsculas, é preciso observar o modo como se escreve os nomes dos autores e editores.
+A regra geral é sempre usar as conversões de acentuação quando houver conversão para letras em maiúsculas, especialmente se estiver compilando com o \ifbool{MakeGly}{\gly*{BibTeX}}{Bib\TeX}.
+No caso de compilação com \ifbool{MakeGly}{\gly*{biber}}{biber}, padrão do \href{https://ctan.org/pkg/biblatex}{\ifbool{MakeGly}{\gly*{BibLaTeX}}{Bib\LaTeX}\LinkIcon}, estas conversões de acentuação são desnecessárias, visto que o \ifbool{MakeGly}{\gly*{biber}}{biber} já converte automaticamente caracteres em \ifbool{MakeAcr}{\intl{UTF8}}{UTF-8}, inclusive do \ifbool{MakeGly}{\gly*{LaTeX}}{\LaTeX}.
+Informações sobre caracteres especiais e conversões de acentuação podem ser observadas em \url{https://en.wikibooks.org/wiki/LaTeX/Special_Characters}.

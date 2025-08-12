@@ -1,0 +1,86 @@
+\section{Compilação de documento \LaTeX}%
+\label{sect:doc-comp}
+
+Geralmente, os editores compilam os documentos automaticamente ou após configuração, caso tenha uma distribuição \ifbool{MakeGly}{\gly*{LaTeX}}{\LaTeX} instalada, por exemplo, \href{https://texlipse.sourceforge.net/}{TeXlipse\LinkIcon}\ifbool{MakeGly}{\index{TeX?\TeX !LaTeX?\LaTeX !TeXlipse}}{} ou \href{https://www.xm1math.net/texmaker/}{Texmaker\LinkIcon}\ifbool{MakeGly}{\index{TeX?\TeX !LaTeX?\LaTeX !Texmaker}}{}, entre outros; ou ainda, podem ser usados editores \ENLang{online}, por exemplo, \href{https://www.texpage.com/}{{\TeX}Page\LinkIcon}\ifbool{MakeGly}{\index{TeX?\TeX !LaTeX?\LaTeX !TeXPage?{\TeX}Page}}{}, \href{https://www.overleaf.com/}{Overleaf\LinkIcon}\ifbool{MakeGly}{\index{TeX?\TeX !LaTeX?\LaTeX !Overleaf}}{} ou \href{https://www.papeeria.com/}{Papeeria\LinkIcon}\ifbool{MakeGly}{\index{TeX?\TeX !LaTeX?\LaTeX !Papeeria}}{}, entre outros.
+
+No entanto, documentos podem ser compilados em diversos sistemas operacionais\index{sistema operacional}, caso tenha uma distribuição \ifbool{MakeGly}{\gly*{LaTeX}}{\LaTeX} instalada, usando comandos apropriados, que devem ser digitados em um prompt de comando do \Index[sistema operacional]{Windows}\textsuperscript{\textregistered} ou em terminais do \Index[sistema operacional]{Linux} e do \Index[sistema operacional]{macOS}\textsuperscript{\textregistered}.
+
+Se todas as figuras no seu projeto estão somente em formato \ifbool{MakeAcr}{\intldescr{EPS} (\intl{EPS})}{Encapsulated PostScript (EPS)}, usam-se os seguintes comandos:
+
+\begin{snugshade}
+\begin{Verbatim}
+latex  <mainfile>.tex
+biber  <mainfile>
+latex  <mainfile>.tex
+latex  <mainfile>.tex
+dvips  <dvips-options> <mainfile>.dvi -o <mainfile>.ps
+ps2pdf <mainfile>.ps   <mainfile>.pdf
+\end{Verbatim}
+\end{snugshade}
+
+Se as figuras no seu projeto estão em diversos formatos suportados, como \ifbool{MakeAcr}{\intl{EPS}, \intldescr{JPEG} (\intl{JPEG}), \intl{PDF} e \intldescr{PNG} (\intldescr+{PNG} \textemdash\ \intl{PNG})}{EPS, \ENLang{Joint Photographic Experts Group} (JPEG), PDF e Gráficos Portáteis de Rede (\ENLang*{Portable Network Graphics} \textemdash\ PNG)}, usam-se os seguintes comandos:
+
+\begin{snugshade}
+\begin{Verbatim}
+pdflatex <mainfile>.tex
+biber    <mainfile>
+pdflatex <mainfile>.tex
+pdflatex <mainfile>.tex
+\end{Verbatim}
+\end{snugshade}
+
+É possível substituir o compilador \texttt{pdflatex} pelo \texttt{lualatex} ou \texttt{xelatex}.
+As configurações do pacote \texttt{utfpr-thesis} são mais compatíveis com \texttt{lualatex} do que \texttt{xelatex}, que exibe diferenças mais evidentes.
+Entretanto, sugere-se usar o compilador \texttt{pdflatex} (mais rápido), pois o pacote \texttt{utfpr-thesis} foi configurado e testado com esse compilador de modo mais exaustivo.
+Sugere-se também usar uma distribuição \ifbool{MakeGly}{\gly*{TeX}/\gly*{LaTeX}}{\TeX/\LaTeX} recente (2019 ou posterior).
+
+O arquivo final (\ifbool{MakeAcr}{\intl{PDF}}{PDF}) pode ser convertido para \ifbool{MakeAcr}{\intl{PDF}}{PDF}/A usando diversas ferramentas, por exemplo: \url{https://www.pdfforge.org/online/en/pdf-to-pdfa}. Porém, o comando \ColorBox{shadecolor}{\Verb|\DocumentMetadata{Options}|} do núcleo \ifbool{MakeGly}{\gly*{LaTeX}}{\LaTeX} pode ser usado para tal finalidade, no início do principal arquivo-fonte (ver \texttt{./utfpr-thesis.tex}).
+
+\subsection{Problemas de compilação}%
+\label{ssect:comp-prob}
+
+Este modelo foi configurado e testado para compilar documentos sem problemas, teoricamente.
+Contudo, por se tratar de um código desenvolvido em uma linguagem de programação (para editoração), está sujeito a bugs como qualquer outro código computacional.
+Além disto, este modelo usa a classe \texttt{\ifbool{MakeGly}{\gly*{memoir}}{memoir}}, que no que lhe concerne utiliza uma quantidade significativa de pacotes, comandos e ambientes, que podem apresentar incompatibilidades com os empregados no modelo.
+Portanto, alguns cuidados devem ser tomados quando se trabalha com \ifbool{MakeGly}{\gly*{LaTeX}}{\LaTeX}:
+
+\begin{itemize}
+\item Os comandos devem ser corretamente empregados, verificando-se abertura e fechamento de colchetes e chaves (argumentos):
+\begin{snugshade}
+\begin{Verbatim}
+\<CommandName>[Optional Argument]{Mandatory Argument}
+\end{Verbatim}
+\end{snugshade}
+\item Alguns comandos não possuem argumentos, mas às vezes, torna-se necessário finalizá-los com barra invertida ou chaves para imprimir um espaço com texto subsequente, por exemplo, \ifbool{MakeGly}{\gly*{TeX}}{\TeX} é um\ldots{} (\ColorBox{shadecolor}{\Verb|\TeX\ é um\ldots{}|}):
+\begin{snugshade}
+\begin{Verbatim}
+\<CommandName>\ text following the command...
+\<CommandName>{} text following the command...
+\end{Verbatim}
+\end{snugshade}
+\item Os ambientes devem ser corretamente empregados, verificando corpo (conteúdo), abertura e fechamento dos mesmos, assim como a presença de eventuais argumentos:
+\begin{snugshade}
+\begin{Verbatim}
+\begin{EnvironmentName}[Optional Argument]{Mandatory Argument}
+Content or Body
+\end{EnvironmentName}
+\end{Verbatim}
+\end{snugshade}
+\item Alguns \href{https://en.wikibooks.org/wiki/LaTeX/Special_Characters}{caracteres especiais\LinkIcon} do \ifbool{MakeGly}{\gly*{LaTeX}}{\LaTeX} devem ser precedidos de barra invertida quando se deseja imprimi-los no texto; do contrário, não são impressos e executam comandos específicos:
+\begin{itemize}
+\item A sequência \ColorBox{shadecolor}{\Verb|\$ \& \% \# \_ \{ \}|} resulta em \$ \& \% \# \_ \{ \}.
+\end{itemize}
+\item Os textos copiados de outros arquivos (\texttt{*.doc}, \texttt{*.html}, \texttt{*.pdf}, etc.) para os arquivos-fonte (\texttt{*.tex}, \texttt{*.bib}, etc.) devem ter a mesma \href{https://en.wikibooks.org/wiki/LaTeX/Special_Characters}{codificação de caracteres\LinkIcon} (\ifbool{MakeAcr}{\intl{UTF8}}{UTF-8}); pois alguns caracteres podem não ser corretamente impressos ou causar algum erro, como hífen, travessão, cedilha, acentuados, especiais, entre outros.
+\item Os nomes de arquivos incluídos no modelo (arquivos-fonte, figuras, etc.) e os rótulos (\ENLang*{labels}) não devem conter caracteres acentuados ou especiais:
+\begin{itemize}
+\item Ao invés de \texttt{capítulo-1.tex} como nome de arquivo-fonte, usar: \texttt{capitulo-1.tex}, \texttt{cap-1.tex}, \texttt{chapter-1.tex} ou \texttt{chpt-1.tex}.
+\item Ao invés de \ColorBox{shadecolor}{\Verb|\label{chpt:introdução}|} como rótulo, usar:
+\begin{snugshade}
+\begin{Verbatim}
+\label{chpt:introducao}%  % Opção 1
+\label{chpt:introduction}%% Opção 2
+\label{chpt:intro}%       % Opção 3
+\end{Verbatim}
+\end{snugshade}
+\end{itemize}
+\end{itemize}

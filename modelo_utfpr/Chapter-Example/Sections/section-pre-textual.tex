@@ -1,0 +1,12 @@
+\section{Elementos pré-textuais}%
+\label{sect:pre-text}
+
+Alguns destes elementos são gerados automaticamente pelo modelo \ifbool{MakeGly}{\gly*{UTFPRThesis}}{\UTFPR-Thesis}.
+Para adicionar ou alterar as informações apresentadas na \cvrref\ e em alguns dos outros elementos pré-textuais, deve-se editar as informações do documento no preâmbulo do arquivo \texttt{./utfpr-thesis.tex}.
+
+Para adicionar ou alterar os conteúdos da \ttlpgref, da \errref, \apvlpgref, da \dedref, dos \ackref, da \epiref, do \resref\ e do \absref, deve-se editar o arquivo \texttt{pre-textual.tex} em \texttt{./Pre-Textual/}.
+Alternativamente, um arquivo em \ifbool{MakeAcr}{\intldescr{PDF} (\intldescr+{PDF} \textemdash\ \intl{PDF})}{Formato de Documento Portátil (\ENLang*{Portable Document Format} \textemdash\ PDF)} da \apvlpgref\ (gerada pelo Sistema Acadêmico e sem assinaturas) pode ser inserido no documento.
+
+A \loaref, a \loiref\footnote{Que pode ser separada em: \lofref, \lowref, \lopref, \lohref\ e \lodref} e a \lotref\ são geradas automaticamente pelo modelo \ifbool{MakeGly}{\gly*{UTFPRThesis}}{\UTFPR-Thesis}; os itens destas listas são impressos à medida que forem sendo inseridos no texto do documento.
+A \acrref\ e a \symref\ são geradas automaticamente a partir dos arquivos \texttt{acronyms-entries.tex} e \texttt{symbols-entries.tex}, respectivamente, ambos presentes em \texttt{./Pre-Textual/Optionals/}\footnote{Detalhes sobre comandos do pacote \texttt{utfpr-thesis} para impressão de abreviaturas e siglas e de símbolos são apresentados nas \Cref{sect:acr,sect:sym}, respectivamente}.
+O \tocref\ é o último elemento pré-textual e também é gerado automaticamente pelo modelo \ifbool{MakeGly}{\gly*{UTFPRThesis}}{\UTFPR-Thesis}.

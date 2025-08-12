@@ -1,0 +1,203 @@
+%%%% template-approval-page.tex, 2025/08/03
+%%%% Copyright (C) 2023-2025 Luiz E. M. Lima (luizeduardomlima@gmail.com)
+%%
+%% This work may be distributed and/or modified under the conditions of the
+%% LaTeX Project Public License, either version 1.3 of this license or (at your
+%% option) any later version.
+%% The latest version of this license is in
+%%   https://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX version
+%% 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%%
+%% The Current Maintainer of this work is Luiz E. M. Lima.
+%%
+%% This work consists of the file template-approval-page.tex.
+
+%% Detecção e aviso sobre comandos obsoletos
+% \RequirePackage[l2tabu, orthodox]{nag}
+
+%% Classe de documento
+\documentclass[a4paper, 12pt, twoside]{memoir}
+
+%% Pacotes utilizados
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% \usepackage{lmodern}
+\usepackage[scaled = 1.0, helvratio = 1.0]{newtxtext}
+\usepackage[smallerops]{newtxmath}
+\usepackage{microtype}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+% \usepackage[pass, showframe]{geometry}
+
+%% Estilo de página
+\pagestyle{empty}
+\AtBeginDocument{\frenchspacing\centering}
+
+%% Texto
+\setulmarginsandblock{30mm}{20mm}{*}
+\setlrmarginsandblock{30mm}{20mm}{*}
+\setheadfoot{10mm}{10mm}
+\setheaderspaces{*}{10mm}{*}
+\checkandfixthelayout%
+
+%% Definições de comandos
+\newbool{Undergraduate}
+\newenvironment*{Member}{%
+  \begin{minipage}[t]{75mm}%
+  \Centering\footnotesize\ignorespaces%
+}{%
+  \end{minipage}%
+  \ignorespacesafterend%
+}
+\newcommand*{\UTFPRName}{Universidade Tecnológica Federal do Paraná}
+\renewcommand*{\familydefault}{\sfdefault}
+\csgappto{Centering}{%
+  \sloppy%
+  \hbadness\csuse{@M}%
+  \hyphenpenalty\csuse{@M}%
+  \exhyphenpenalty\csuse{@M}%
+}
+
+%% Locais (pastas) de ilustrações
+\graphicspath{{../Logos/}}
+
+%% Grau acadêmico: comentar ou descomentar para alterar
+% \booltrue{Undergraduate}%% Graduação
+\boolfalse{Undergraduate}%% Pós-graduação
+
+%% Início do documento
+\begin{document}
+
+\begin{minipage}{35mm}
+\raggedright%
+\includegraphics[width = 15mm]{republic-blazon}
+\end{minipage}%
+\begin{minipage}{\dimexpr\linewidth-70mm}
+\centering\footnotesize%
+\ifbool{Undergraduate}{%
+  \textbf{Ministério da Educação}\\%
+  \textbf{\UTFPRName}\\%
+  Campus Cidade\\%
+  Diretória de Graduação e Educação Profissional\\%
+  Nome do Departamento ou da Coordenação%
+}{%
+  \bfseries%
+  \UTFPRName\\%
+  Campus Cidade\\%
+  Diretoria de Pesquisa e Pós-Graduação\\%
+  PROGRAMA DE PÓS-GRADUAÇÃO EM\\%
+  NOME DO PROGRAMA%
+}
+\end{minipage}%
+\begin{minipage}{35mm}
+\raggedleft%
+\includegraphics[width = 30mm]{utfpr}
+\end{minipage}
+
+\ifbool{Undergraduate}{%
+  \vspace*{2pt}%
+  {\color[cmyk]{0, 0, 0, 1}\hrule height 0.5pt}%
+  \vspace*{1pt}%
+  {\color[cmyk]{0, 0.2, 1, 0}\hrule height 0.5pt}%
+}{}
+
+\vspace*{\baselineskip}
+
+\textbf{\ifbool{Undergraduate}{TERMO DE APROVAÇÃO}{FOLHA DE APROVAÇÃO}}
+
+\vspace*{\baselineskip}
+
+\ifbool{Undergraduate}{}{Título da Tese ou Dissertação ou Monografia N. 00/YYYY}
+
+\begin{Center}
+\bfseries%
+TÍTULO DE TRABALHO ACADÊMICO, CLARO E PRECISO, COM TEXTO MUITO LONGO QUE PODE OCUPAR MAIS DE UMA LINHA
+\end{Center}
+
+\ifbool{Undergraduate}{}{por}
+
+\vspace*{\baselineskip}
+
+\textbf{Prenome{(s)} Sobrenome-A1}
+
+% \textbf{Prenome{(s)} Sobrenome-A2}
+
+% \textbf{Prenome{(s)} Sobrenome-A3}
+
+\vspace*{2\baselineskip}
+
+\begin{minipage}{\textwidth}
+\ifbool{Undergraduate}{%
+  Este Trabalho de Conclusão de Curso (TCC) foi apresentado em DD de mmmmmm de YYYY como requisito parcial para a obtenção do título de Bacharel{(a)} ou Licenciado{(a)} ou Tecnólogo{(a)}em Nome do Curso.%
+}{%
+  Esta Tese ou Dissertação ou Monografia foi apresentada às HH horas de DD de mmmmmm de YYYY como requisito parcial para a obtenção do título de Doutor{(a)} ou Mestre{(a)} ou Especialista, na linha de pesquisa em Nome da Linha e na área de concentração em Nome da Área, do Programa de Pós-Graduação em Nome do Programa.%
+}
+O{(A)} candidato{(a)} foi arguido{(a)} pela Banca Examinadora composta pelos membros listados na sequência.
+Após deliberação, a Banca Examinadora considerou o trabalho acadêmico aprovado.
+\end{minipage}
+
+\vspace*{2\baselineskip}
+
+\begin{Member}
+Prof{(a)}. Dr{(a)}. Prenome{(s)} Sobrenome-B1\\%
+Presidente{(a)} (Orientador{(a)})
+\end{Member}
+
+\vspace*{2\baselineskip}
+
+\begin{Member}
+Prof{(a)}. Me{(a)}. Prenome{(s)} Sobrenome-B2\\%
+Membro (Instituição do Membro-B2)
+\end{Member}%
+\hfill%
+\begin{Member}
+Prof{(a)}. Dr{(a)}. Prenome{(s)} Sobrenome-B3\\%
+Membro (Instituição do Membro-B3)
+\end{Member}
+
+\vspace*{2\baselineskip}
+
+\begin{Member}
+Prof{(a)}. Me{(a)}. Prenome{(s)} Sobrenome-B4\\%
+Membro (Instituição do Membro-B4)
+\end{Member}%
+\hfill%
+\begin{Member}
+Prof{(a)}. Dr{(a)}. Prenome{(s)} Sobrenome-B5\\%
+Membro (Instituição do Membro-B5)
+\end{Member}
+
+\vfill%
+
+\begin{Member}
+\ifbool{Undergraduate}{%
+  Prof{(a)}. Me{(a)}. Prenome{(s)} Sobrenome-C2\\%
+  Responsável pelas Atividades de TCC%
+}{%
+%   \raisebox{-\baselineskip}{%
+%     \includegraphics[width = 25mm, height = 25mm]{example-image}%% Carimbo
+%   }%
+}
+\end{Member}%
+\hfill%
+\begin{Member}
+Prof{(a)}. Dr{(a)}. Prenome{(s)} Sobrenome-C1\\%
+Coordenador{(a)} do \ifbool{Undergraduate}{Curso}{Programa}
+\end{Member}
+
+\vspace*{2\baselineskip}
+
+\ifbool{Undergraduate}{%
+  {\footnotesize\textemdash\ O Termo de Aprovação assinado encontra-se na Coordenação do Curso \textemdash}%
+}{%
+  {\footnotesize\textemdash\ A Folha de Aprovação assinada encontra-se na Secretaria Acadêmica \textemdash}%
+}
+
+%% Fim do documento
+\end{document}

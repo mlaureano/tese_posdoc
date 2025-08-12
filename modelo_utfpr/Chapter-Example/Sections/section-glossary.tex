@@ -1,0 +1,65 @@
+\section{Glossário}%
+\label{sect:gly}
+
+Termos de \glyref\ podem ser definidos ao longo do texto, preferencialmente antes do seu primeiro uso, ou em um arquivo de entradas.
+Tal arquivo pode ser incluído no preâmbulo do principal arquivo-fonte (ver \texttt{./utfpr-thesis.tex}) pelo comando:
+
+\begin{snugshade}
+\begin{Verbatim}
+\MakeGlossary[File]%% Por exemplo, glossary-entries.tex em ./Post-Textual/Optionals/
+\end{Verbatim}
+\end{snugshade}
+
+Os termos são definidos usando o comando do pacote \texttt{utfpr-thesis}:
+
+\begin{snugshade}
+\begin{Verbatim}
+\NewGlossaryEntry{Label}{%% Usar somente letras latinas não acentuadas
+  Term        = {...},%   % Obrigatório
+  Description = {...},%   % Obrigatório
+  Plural      = {...},%   % Opcional
+  Parent      = {...},%   % Opcional
+}
+\end{Verbatim}
+\end{snugshade}
+
+\noindent Observação: se a letra inicial do termo, da descrição ou do plural for acentuada, deve ser colocada entre chaves, por exemplo, \ColorBox{shadecolor}{\texttt{Description = \{\{á\}rea\}}}.
+Isto se aplica também para abreviaturas e siglas e para símbolos (exceto termo e plural para este último).
+
+Para que termos de \glyref\ sejam impressos em alguma parte do texto do documento (e, consequentemente, sejam adicionados no \glyref), usam-se os comandos do pacote \texttt{utfpr-thesis}:
+
+\begin{snugshade}
+\begin{Verbatim}
+\gly{Label}%     % Termo
+\Gly{Label}%     % Termo com letra inicial em maiúscula
+\glydescr{Label}%% Descrição
+\GlyDescr{Label}%% Descrição com letra inicial em maiúscula
+\glypl{Label}%   % Plural
+\GlyPl{Label}%   % Plural com letra inicial em maiúscula
+\end{Verbatim}
+\end{snugshade}
+
+\noindent Os comandos com letra inicial em maiúscula imprimem o termo, a descrição e o plural (se definido) com a letra inicial em maiúscula.
+As versões destes comandos com um asterisco (*) opcional, por exemplo, \ColorBox{shadecolor}{\Verb|\gly*{Label}|}, adicionam o termo também no \idxref, exceto os comandos de descrição.
+Seguem alguns exemplos.
+
+\enquote{\ifbool{MakeGly}{\gly*{UTFPRThesis} é um \glydescr{UTFPRThesis}}{\UTFPR-Thesis é um modelo \LaTeX\ que permite atender os requisitos das normas definidas pela UTFPR para elaboração de trabalhos acadêmicos}}.
+Esta citação direta curta corresponde a um exemplo de termo definido no \glyref\ e usado no decorrer do texto, assim como:
+
+\begin{DisplayCitation}[brazilian]{}
+Esta frase usa a palavra \ifbool{MakeGly}{\gly*{componente}}{componente} e o plural \ifbool{MakeGly}{\glypl*{filho}}{filhos}, ambas definidas no \glyref\ como filhas da entrada \ifbool{MakeGly}{\gly*{pai}}{pai}.
+\ifbool{MakeGly}{\Gly*{equilibriodaconfiguracao}}{Equilíbrio da configuração} exemplifica o uso de um termo no início de uma frase.
+O modelo \ifbool{MakeGly}{\gly*{UTFPRThesis}}{\UTFPR-Thesis} é escrito em \ifbool{MakeGly}{\gly*{LaTeX}}{\LaTeX}, definido no \glyref\ como \enquote{\ifbool{MakeGly}{\glydescr{LaTeX}}{conjunto de macros para o processador de textos \TeX, utilizado amplamente para a produção de textos matemáticos e científicos devido à sua alta qualidade tipográfica}}.
+\end{DisplayCitation}
+
+O texto desta \Index{citação} \Index[citação]{direta} longa foi produzido com:
+
+\begin{snugshade}
+\begin{Verbatim}[numbers = left]
+\begin{DisplayCitation}[brazilian]{}
+Esta frase usa a palavra \ifbool{MakeGly}{\gly*{componente}}{componente} e o plural \ifbool{MakeGly}{\glypl*{filho}}{filhos}, ambas definidas no \glyref\ como filhas da entrada \ifbool{MakeGly}{\gly*{pai}}{pai}.
+\ifbool{MakeGly}{\Gly*{equilibriodaconfiguracao}}{Equilíbrio da configuração} exemplifica o uso de um termo no início de uma frase.
+O modelo \ifbool{MakeGly}{\gly*{UTFPRThesis}}{\UTFPR-Thesis} é escrito em \ifbool{MakeGly}{\gly*{LaTeX}}{\LaTeX}, definido no \glyref\ como \enquote{\ifbool{MakeGly}{\glydescr{LaTeX}}{conjunto de macros para o processador de textos \TeX, utilizado amplamente para a produção de textos matemáticos e científicos devido à sua alta qualidade tipográfica}}.
+\end{DisplayCitation}
+\end{Verbatim}
+\end{snugshade}

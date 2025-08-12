@@ -1,0 +1,13 @@
+%%%% ERRATA (ELEMENTO OPCIONAL)
+%%
+%% Lista dos erros ocorridos no texto, seguidos das devidas correções:
+%% - {Errata*} insere a autorreferência do documento.
+\begin{Errata}%[Título Alternativo]%% Substitui o título padrão
+%%%% Formato (com \midrule entre linhas): Página(s) & Onde se lê & Leia-se \\
+\labelcpageref{err:chpt-1,err:chpt-2,err:chpt-3,err:chpt-4,err:chpt-5,err:chpt-6} &
+capítulo{(s)}                                                                     &
+seção{(ões)} primária{(s)}                                                        \\ \midrule%
+\pageref{err:ssect}         &
+subseção{(ões)}             &
+seção{(ões)} terciária{(s)} \\
+\end{Errata}

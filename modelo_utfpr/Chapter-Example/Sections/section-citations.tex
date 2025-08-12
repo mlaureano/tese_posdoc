@@ -1,0 +1,117 @@
+\section{Citações}%
+\label{sect:cit}
+
+O pacote \texttt{utfpr-thesis} está configurado para produzir no texto as devidas citações\index{citação} de \refref\ no estilo alfabético (autor-ano), conforme as normas da \ifbool{MakeAcr}{\intl{ABNT}}{ABNT}.
+Seguem exemplos de citações\index{citação} implícitas\index{citação!indireta!implícita} (entre parênteses) e explícitas\index{citação!indireta!explícita}:
+
+\begin{itemize}
+\item Autor e ano:
+\begin{itemize}
+\item Implícita\index{citação!indireta!implícita}: \ldots~\cite{Pinto2000}\footnote{\ColorBox{shadecolor}{\Verb|\parencite{Citation-Key}|} é outro comando de \Index{citação} que produz o mesmo resultado}.
+\item Explícita\index{citação!indireta!explícita}: \textcite{Pinto2000} analisaram\ldots%
+\end{itemize}
+\item Citado por (\textit{apud})\footnote{Não geram a referência \enquote{citada por}, conforme a \textcite[\ifbool{MakeAcr}{\Abrv{sec}}{Seç.} 7.3 \ppno~14 da \ifbool{MakeAcr}{\intl{NBR}}{NBR} 10520]{ABNT2023NBR10520}}:
+\begin{itemize}
+\item Implícita\index{citação!indireta!implícita}: \ldots\ \apud[Faina \etal, 1999][55]{Faina2001}.
+\item Explícita\index{citação!indireta!explícita}: Faina \etal\ \apud[1999][55]{Faina2001} mostraram\ldots%
+\end{itemize}
+\item Somente autor:
+\begin{itemize}
+\item Implícita\index{citação!indireta!implícita}: \ldots\ \citeauthor{Pinto2000}.
+\item Explícita\index{citação!indireta!explícita}: \citeauthor*{Pinto2000}\footnote{\ColorBox{shadecolor}{\Verb|\citeauthor*{Citation-Key}|} foi redefinido no pacote \texttt{utfpr-thesis} a partir do \href{https://ctan.org/pkg/biblatex}{\ifbool{MakeGly}{\gly*{BibLaTeX}}{Bib\LaTeX}\LinkIcon}} analisaram\ldots%
+\end{itemize}
+\item Somente ano:
+\begin{itemize}
+\item Implícita\index{citação!indireta!implícita}: \ldots\ naquele ano \citeyear{Faina2000}.
+\item Explícita\index{citação!indireta!explícita}: No ano \citeyear*{Faina2000}, \ldots%
+\end{itemize}
+\end{itemize}
+
+\noindent Estas citações\index{citação} indiretas\index{citação!indireta} são produzidas pelos seguintes comandos:
+
+\begin{snugshade}
+\begin{Verbatim}
+\cite{Pinto2000}%                       % Autor e ano (implícita)
+\textcite{Pinto2000}%                   % Autor e ano (explícita)
+\apud[Faina \etal, 1999][55]{Faina2001}%% Citado por (apud) (implícita)
+Faina \etal\ \apud[1999][55]{Faina2001}%% Citado por (apud) (explícita)
+\citeauthor{Pinto2000}%                 % Somente autor (implícita)
+\citeauthor*{Pinto2000}%                % Somente autor (explícita)
+\citeyear{Faina2000}%                   % Somente ano (implícita)
+\citeyear*{Faina2000}%                  % Somente ano (explícita)
+\end{Verbatim}
+\end{snugshade}
+
+Informações sobre a aplicação dos comandos apresentados e demais comandos para \Index{citação} e geração de \refref, usados no modelo \ifbool{MakeGly}{\gly*{UTFPRThesis}}{\UTFPR-Thesis}, podem ser encontradas nos manuais dos pacotes \href{https://ctan.org/pkg/biblatex}{\ifbool{MakeGly}{\gly*{BibLaTeX}}{Bib\LaTeX}\LinkIcon} e \href{https://ctan.org/pkg/biblatex-abnt}{\ifbool{MakeGly}{\gly*{BibLaTeXabnt}}{Bib\LaTeX-abnt}\LinkIcon}.
+
+O arquivo \texttt{references-examples.bib} em \texttt{./Post-Textual/} (ver \Cref{sect:ref}) apresenta alguns exemplos dos seguintes tipos de \refref\ normalmente aceitos pelo \href{https://ctan.org/pkg/biblatex}{\ifbool{MakeGly}{\gly*{BibLaTeX}}{Bib\LaTeX}\LinkIcon} para citações ao longo do texto do documento:
+
+\begin{itemize}
+\item anais de eventos~\cite{Pirmez2002};
+\item \ifbool{MakeAcr}{\abrvdescr*{art}s}{artigos} em anais de eventos~\cite{Alt1995,Faina2001};
+\item \ifbool{MakeAcr}{\abrvdescr*{art}s}{artigos} em coletâneas de \ifbool{MakeAcr}{\abrvdescr*{art}s}{artigos}~\cite{Pinto2000};
+\item \ifbool{MakeAcr}{\abrvdescr*{art}s}{artigos} em revistas (periódicos)~\cite{Guimaraes2003};
+\item capítulos\phantomsection\label{err:chpt-4} de livros~\cite{Santos2000};
+\item livretos~\cite{Einstein1921,Inmetro2021,Thompson2001};
+\item livros~\cite{Asimov1950,Camoes1953,Pedrycz1998};
+\item manuais técnicos~\cite{ABNT2011NBR14724,ABNT2012NBR6024,ABNT2018NBR6023,ABNT2023NBR10520,IBGE1993,IONA1999,Wilson2020};
+\item miscelânea~\cite{Cruz2003,Hadian1982};
+\item páginas na Internet, utilizando a data do último acesso à página~\cite[acessadas em 5 de dezembro de 2023]{Gnuplot2023,Larsson2020,Magdowski2012,Smallen2014,Scharrer2018,UTFPR2018};
+\item relatórios técnicos~\cite{OMG2000};
+\item \ifbool{MakeGly}{\glypl*{dissertacao}}{dissertações} de mestrado~\cite{SantosFilho2003};
+\item \ifbool{MakeGly}{\glypl*{tese}}{teses} de doutorado~\cite{Faina2000};
+\item correspondências eletrônicas~\cite{Sichman2002}.
+\end{itemize}
+
+\subsection{Citações diretas}%
+\label{ssect:drct-cit}
+
+O pacote \texttt{utfpr-thesis} permite inserir citações\index{citação} diretas\index{citação!direta} longas (com mais de três linhas) no documento usando o ambiente \texttt{DisplayCitation}, conforme exemplos em arquivos-fonte deste modelo:
+
+\begin{DisplayCitation}[brazilian]{\cite[\ifbool{MakeAcr}{\Abrv{sec}}{Seç.} 7.1.1 \ppno~12 da \ifbool{MakeAcr}{\intl{NBR}}{NBR} 10520]{ABNT2023NBR10520}}
+A \Index{citação} \Index[citação]{direta}, com mais de três linhas, deve ser destacada com recuo padronizado em relação à margem esquerda, com letra menor que a utilizada no texto, em espaço simples e sem aspas.
+Recomenda-se o recuo de \Unit[4]{cm}
+\end{DisplayCitation}
+
+\noindent Esta \Index{citação} \Index[citação]{direta} longa resulta de:
+
+\begin{snugshade}
+\begin{Verbatim}[numbers = left]
+\begin{DisplayCitation}[brazilian]{\cite[\ifbool{MakeAcr}{\Abrv{sec}}{Seç.} 7.1.1 \ppno~12 da \ifbool{MakeAcr}{\intl{NBR}}{NBR} 10520]{ABNT2023NBR10520}}
+A \Index{citação} \Index[citação]{direta}, com mais de três linhas, deve ser destacada com recuo padronizado em relação à margem esquerda, com letra menor que a utilizada no texto, em espaço simples e sem aspas.
+Recomenda-se o recuo de \Unit[4]{cm}
+\end{DisplayCitation}
+\end{Verbatim}
+\end{snugshade}
+
+Há também um comando para \Index{citação} \Index[citação]{direta} curta (com até três linhas):
+
+\begin{snugshade}
+\begin{Verbatim}
+\Citation[Language]{Authorship}{Text}[Footnote]
+\end{Verbatim}
+\end{snugshade}
+
+\noindent Este comando é convertido automaticamente no ambiente para mais de três linhas, se o texto da citação exceder três linhas.
+Tanto o comando quanto o ambiente podem receber um nome de idioma previamente atribuído como argumento opcional.
+Para o idioma secundário, o texto da \Index{citação} é escrito automaticamente em itálico e a hifenização é ajustada para tal.
+Por exemplo:
+
+\begin{DisplayCitation}[english]{\cite[Sec. 7.1.1 \ppno~12 of the \ifbool{MakeAcr}{\intl{NBR}}{NBR} 10520, own translation]{ABNT2023NBR10520}}
+The direct quotation, with more than three lines, must be highlighted with a standardized indentation concerning the left margin, with a smaller letter than that used in the text, in single space, and without quotation marks.
+A \Unit[4]{cm} indentation is recommended
+\end{DisplayCitation}
+
+\noindent Esta \Index{citação} \Index[citação]{direta} longa resulta de:
+
+\begin{snugshade}
+\begin{Verbatim}[numbers = left]
+\begin{DisplayCitation}[english]{\cite[Sec. 7.1.1 \ppno~12 of the \ifbool{MakeAcr}{\intl{NBR}}{NBR} 10520, own translation]{ABNT2023NBR10520}}
+The direct quotation, with more than three lines, must be highlighted with a standardized indentation concerning the left margin, with a smaller letter than that used in the text, in single space, and without quotation marks.
+A \Unit[4]{cm} indentation is recommended
+\end{DisplayCitation}
+\end{Verbatim}
+\end{snugshade}
+
+Citações\index{citação} diretas\index{citação!direta} curtas são escritas no texto e devem estar contidas entre aspas duplas.
+Observe que em \ifbool{MakeGly}{\gly*{LaTeX}}{\LaTeX} as aspas iniciais diferem das finais: \Citation[brazilian]{\cite[135]{Camoes1953}}{Amor é fogo que arde sem se ver, \textelp{}}.

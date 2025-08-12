@@ -1,0 +1,42 @@
+\section{Algoritmos}%
+\label{sect:alg}
+
+Algoritmos podem ser inseridos usando o ambiente \texttt{algorithmic} do pacote de mesmo nome\footnote{A documentação do pacote \texttt{algorithmic} está disponível em \url{https://ctan.org/pkg/algorithms}}, sendo então numerados automaticamente usando o ambiente \texttt{algorithm} do pacote \texttt{utfpr-thesis}, conforme exemplos nos \Cref{alg:ex-1,alg:ex-2}.
+
+\begin{algorithm}[!htbp]
+\caption{Primeiro exemplo de algoritmo: calcular \MathBF{y = x^n}}%
+\label{alg:ex-1}
+\begin{algorithmic}[1]
+\REQUIRE{$n \geq 0 \vee x \neq 0$} \COMMENT{Chamar \Cref{alg:ex-2}}
+\ENSURE{$y = x^n$}
+\STATE{$y \gets 1$}
+\WHILE{$N \neq 0$}
+  \IF{$N$ é par}
+    \STATE{$N \gets N / 2$}
+    \STATE{$X \gets X \times X$}
+  \ELSE[$N$ é ímpar]
+    \STATE{$N \gets N - 1$}
+    \STATE{$y \gets y \times X$}
+  \ENDIF{}
+\ENDWHILE{}
+\RETURN{$y$}
+\end{algorithmic}
+\SourceOrNote{autoria própria (\YearNum)}
+\end{algorithm}
+
+\begin{algorithm}[!htbp]
+\caption{Segundo exemplo de algoritmo: receber \MathBF{n} e \MathBF{x}, verificar \MathBF{n} e retornar \MathBF{N} e \MathBF{X}}%
+\label{alg:ex-2}
+\begin{algorithmic}[1]
+\REQUIRE{$n$ \AND{$x$}} \COMMENT{Variáveis de entrada: $n$ é um número inteiro e $x$ é um número real não nulo}
+\IF[$n$ é negativo]{$n < 0$}
+  \STATE{$N \gets -n$}
+  \STATE{$X \gets 1 / x$}
+\ELSE[$n$ é positivo ou nulo]
+  \STATE{$N \gets n$}
+  \STATE{$X \gets x$}
+\ENDIF{}
+\RETURN{$X$ \AND{$N$}} \COMMENT{Variáveis de saída: $N$ e $X$}
+\end{algorithmic}
+\SourceOrNote{autoria própria (\YearNum)}
+\end{algorithm}

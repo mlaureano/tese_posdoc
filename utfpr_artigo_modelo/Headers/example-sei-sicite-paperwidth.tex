@@ -1,0 +1,22 @@
+\documentclass[tikz]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{fontawesome5}
+\renewcommand*{\familydefault}{\sfdefault}
+\begin{document}
+\begin{tikzpicture}
+\draw[thick, yellow!25!white, fill = yellow!25!white] (0, 0) -- (21, 0) -- (21, 3) -- (0, 3) -- cycle;
+\draw[<->, dashed, red!50!black] (0, 0.3)  -- (21, 0.3) node              at (10.5, 0.2) {\tiny 21\,cm};
+\draw[<->, dashed, red!50!black] (20.7, 0) -- (20.7, 3) node[rotate = 90] at (20.8, 1.5) {\tiny 3\,cm};
+\draw[red!50!black]           node at (10.5, 2.8) {\tiny Exemplo de Cabeçalho};
+\draw[right, yellow!75!black] node at (0.5, 2)    {\Huge\bfseries\textit{SEI}};
+\draw[right, green!75!black]  node at (0.5, 1)    {\Huge\bfseries\textit{SICITE}};
+\draw[right, orange!75!black] node at (2.5, 1.75) {\Large\bfseries YYYY};
+\draw[right, blue!75!black]   node at (2.5, 2.25) {\large\bfseries\faAtom\space\faBrain\space\faCog};
+\draw node at (10.5, 2)   {\large\bfseries Seminário de Extensão e Inovação};
+\draw node at (10.5, 1.5) {\large\bfseries Seminário de Iniciação Científica e Tecnológica};
+\draw node at (10.5, 1)   {\bfseries DD de mmmmmm de YYYY | Cidade --- PR};
+\draw node[left] at (20.5, 1.5) {\includegraphics[height = 13mm]{../Logos/utfpr}};
+\end{tikzpicture}
+\end{document}

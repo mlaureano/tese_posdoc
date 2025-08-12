@@ -1,0 +1,88 @@
+\section{Regras gerais de apresentação}%
+\label{sect:rules}
+
+As regras gerais de apresentação descritas na sequência já estão predefinidas neste modelo.
+Algumas destas regras podem ser alteradas por comandos e ambientes específicos do \ifbool{MakeGly}{\gly*{LaTeX}}{\LaTeX} ou do pacote \texttt{utfpr-thesis}, tanto no preâmbulo do arquivo principal \texttt{./utfpr-thesis.tex} quanto em outras partes do documento, por exemplo, nos arquivos dos capítulos\phantomsection\label{err:chpt-3}.
+Seguem as regras:
+
+\begin{itemize}
+\item Devem ser usadas margens superior e esquerda de \Unit[3]{cm} e margens inferior e direita de \Unit[2]{cm}, em papel formato A4 (\Unit[21]{cm} \texttimes\ \Unit[29,7]{cm}).
+\item Sugere-se o uso de fonte do tipo Arial ou Times, de tamanho \Unit[12]{pt} para o texto e de tamanho \Unit[10]{pt} para citações\index{citação} diretas\index{citação!direta} longas (com mais de três linhas), notas de rodapé e legendas de algoritmos, ilustrações e tabelas.
+\item A numeração progressiva para as seções deve ser usada para evidenciar a sistematização do conteúdo do documento~\cite{ABNT2012NBR6024}.
+\item Para os títulos das seções, não se utilizam pontos, hífen, travessão ou qualquer sinal, após o indicativo de seção ou de título:
+\begin{itemize}
+\item Seções primárias: \textbf{\MakeTextUppercase{caixa alta e em negrito}}.
+\item Seções secundárias: \textbf{somente em negrito}.
+\item Seções terciárias: sem recursos de formatação.
+\item Seções quaternárias: \uline{sublinhado}.
+\item Seções quinárias: \textit{em itálico}.
+\end{itemize}
+\item No \tocref, os títulos das seções devem aparecer exatamente iguais aos que estão contidos no documento.
+\end{itemize}
+
+Um texto limpo é mais agradável de ler que um texto com excessivas formatações.
+Assim, sugere-se evitar sempre que possível o uso dos seguintes recursos de formatação (ou enfeites) ao longo do documento:
+
+\begin{itemize}
+\item \textbf{negrito};
+\item \textit{itálico};
+\item \texttt{fonte diferente, como máquina de escrever};
+\item \uline{sublinhado};
+\item excessivas\footnote{Notas de rodapé}.
+\end{itemize}
+
+\noindent Geralmente, usa-se itálico para dar destaque em palavras de língua estrangeira, exceto aquelas já incorporadas pela língua vernácula e nomes próprios.
+
+\subsection{Espaçamento}%
+\label{ssect:spcng}
+
+\begin{itemize}
+\item Os parágrafos devem aparecer com recuo na primeira linha de \Unit[1,5]{cm} e texto justificado.
+\item Todo o texto deve ser digitado com \Index{espaçamento} \Index[espaçamento]{de 1,5} \Index[espaçamento]{entre linhas}, sem \Index{espaçamento} anterior ou posterior.
+\item A descrição do trabalho na \ttlpgref, o \resref, o \absref, as \refref, as citações\index{citação} diretas\index{citação!direta} longas, as notas de rodapé e as legendas de algoritmos, ilustrações e tabelas devem ser digitadas com \Index{espaçamento} \Index[espaçamento]{simples} \Index[espaçamento]{entre linhas}.
+\item As \refref\ devem ser alinhadas à margem esquerda do texto e separadas entre si por uma linha em branco de \Index{espaçamento} \Index[espaçamento]{simples}.
+\item As citações\index{citação} diretas\index{citação!direta} longas devem apresentar recuo padronizado, cujo valor recomendando é de \Unit[4]{cm} da margem esquerda.
+\item Os títulos das seções primárias devem começar em página ímpar (anverso), na parte superior da mancha gráfica, sendo separados do texto que os sucede por uma linha em branco de \Index{espaçamento} \Index[espaçamento]{de 1,5}.
+\item Os títulos das seções secundárias, terciárias, quaternárias e quinárias devem ser separados do texto que os precede e que os sucede por uma linha em branco de \Index{espaçamento} \Index[espaçamento]{de 1,5}.
+\end{itemize}
+
+O recuo na primeira linha, espaço entre a margem e o início do parágrafo, pode ser redefinido pelo comando:
+
+\begin{snugshade}
+\begin{Verbatim}
+\setlength{\parindent}{15mm}%% Padrão
+\end{Verbatim}
+\end{snugshade}
+
+O \Index{espaçamento} \Index[espaçamento]{entre parágrafos} pode ser redefinido pelo comando:
+
+\begin{snugshade}
+\begin{Verbatim}
+\setlength{\parskip}{0mm}%% Padrão (tentar também \onelineskip)
+\end{Verbatim}
+\end{snugshade}
+
+O \Index{espaçamento} \Index[espaçamento]{entre linhas} pode ser redefinido pelos comandos:
+
+\begin{snugshade}
+\begin{Verbatim}
+\SingleSpacing% % Espaçamento simples
+\OnehalfSpacing%% Espaçamento de 1,5 (aproximadamente igual ao padrão)
+\DoubleSpacing% % Espaçamento duplo
+\end{Verbatim}
+\end{snugshade}
+
+Para isso, os ambientes da classe \texttt{\ifbool{MakeGly}{\gly*{memoir}}{memoir}} também estão disponíveis:
+
+\begin{snugshade}
+\begin{Verbatim}
+\begin{SingleSpace}     Content or Body \end{SingleSpace}%  % Espaçamento simples
+\begin{Spacing}{Factor} Content or Body \end{Spacing}%      % Espaçamento de Factor
+\begin{OnehalfSpace}    Content or Body \end{OnehalfSpace}% % Espaçamento de 1,5
+\begin{OnehalfSpace*}   Content or Body \end{OnehalfSpace*}%% Espaçamento de 1,5
+\begin{DoubleSpace}     Content or Body \end{DoubleSpace}%  % Espaçamento duplo
+\begin{DoubleSpace*}    Content or Body \end{DoubleSpace*}% % Espaçamento duplo
+\end{Verbatim}
+\end{snugshade}
+
+Para mais informações, consulte \textcite[\ppno~49--54 e 135]{Wilson2020}.

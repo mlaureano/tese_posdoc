@@ -1,0 +1,180 @@
+Relatório de entradas atualizadas com abstract/keywords e normalização de título/autores:
+Total de entradas atualizadas: 83
+Total de entradas normalizadas (título/autores): 90
+
+Entradas com campos adicionados:
+ - meegleYouthRobotics2025 | abstract: adicionado | keywords: adicionado
+ - acebottImportanceRobotics2025 | abstract: adicionado | keywords: adicionado
+ - ross2024BeyondExhibits | abstract: adicionado | keywords: adicionado
+ - cheung2024SummerLibraries | abstract: adicionado | keywords: adicionado
+ - informalscienceFramework2008 | abstract: adicionado | keywords: adicionado
+ - rennieKrishnamurthiInformalSTEM2025 | abstract: adicionado | keywords: adicionado
+ - unknownEducationalRoboticsAttitudes2023 | abstract: adicionado | keywords: adicionado
+ - whalesbotRevolutionizingSTEM2025 | abstract: adicionado | keywords: adicionado
+ - almarzooq2025ImpactRoboticsSTEM | abstract: adicionado | keywords: adicionado
+ - lim2024IntegratedSTEMRobotics | abstract: adicionado | keywords: adicionado
+ - behavioralHealthRoboticsAI2025 | abstract: adicionado | keywords: adicionado
+ - centrePointRoboticsGames2025 | abstract: adicionado | keywords: adicionado
+ - niryoEducationalRobotsSTEM2025 | abstract: adicionado | keywords: adicionado
+ - playtoLabsRoboticsKids2023 | abstract: adicionado | keywords: adicionado
+ - tiryaki2023StemRoboticCreativity | abstract: adicionado | keywords: adicionado
+ - mosTeachingSTEM2025 | abstract: adicionado | keywords: adicionado
+ - fleetScienceCenter2025 | abstract: adicionado | keywords: adicionado
+ - bcmSTEAMLab2025 | abstract: adicionado | keywords: adicionado
+ - nsfLearningThroughMaking2014 | abstract: adicionado | keywords: adicionado
+ - rahman2024DigitalK12HRI | abstract: adicionado | keywords: adicionado
+ - rahman2019MetricsMethodsFCRAR | abstract: adicionado | keywords: adicionado
+ - makeblockMBot22025 | abstract: adicionado | keywords: adicionado
+ - coderoboPickPlace2025 | abstract: adicionado | keywords: adicionado
+ - vexRoboticsHome2025 | abstract: adicionado | keywords: adicionado
+ - robotlabDobotClassroomPack2025 | abstract: adicionado | keywords: adicionado
+ - robotshopArmsGrippers2025 | abstract: adicionado | keywords: adicionado
+ - scienceBuddiesBuildRoboticArm2025 | abstract: adicionado | keywords: adicionado
+ - rancholabsUltimateGuide2025 | abstract: adicionado | keywords: adicionado
+ - scienceBuddiesRoboticsProjects2025 | abstract: adicionado | keywords: adicionado
+ - scienceBuddiesRobotHand2025 | abstract: adicionado | keywords: adicionado
+ - chang2025ConstructedResponse | abstract: adicionado | keywords: adicionado
+ - venezia2025EducationalRobotArm | abstract: adicionado | keywords: adicionado
+ - first2020AtHomeRoboticArmExplore | abstract: adicionado | keywords: adicionado
+ - gonzalez2025HybridPhysicalVirtualArm | abstract: adicionado | keywords: adicionado
+ - techpowerupDobotMagicianReview2017 | abstract: adicionado | keywords: adicionado
+ - top3dshopDobotMagicianReview2023 | abstract: adicionado | keywords: adicionado
+ - teradyneCollaborativeRobots2025 | abstract: adicionado | keywords: adicionado
+ - kinovaJacoAssistiveTechnologies2025 | abstract: adicionado | keywords: adicionado
+ - vtRoboticsSafety2025 | abstract: adicionado | keywords: adicionado
+ - wikipediaCobot2025 | abstract: adicionado | keywords: adicionado
+ - standardBotsCobotSafetyStandards2025 | abstract: adicionado | keywords: adicionado
+ - ulSolutionsCollaborativeSafety2025 | abstract: adicionado | keywords: adicionado
+ - bostonDynamicsSpot2025 | abstract: adicionado | keywords: adicionado
+ - li2023LowCostCableDrivenArm | abstract: adicionado | keywords: adicionado
+ - teachKidsRobotsAreRobotsSafe2025 | abstract: adicionado | keywords: adicionado
+ - ulSolutionsRoboticSafetyCertification2025 | abstract: adicionado | keywords: adicionado
+ - wefHumanoidRobots2025 | abstract: adicionado | keywords: adicionado
+ - techGearLabBestRobotKits2025 | abstract: adicionado | keywords: adicionado
+ - scienceCityRivetingRobots2025 | abstract: adicionado | keywords: adicionado
+ - youtubeExploringRoboticsKids2025 | abstract: adicionado | keywords: adicionado
+ - stempediaProjects2025 | abstract: adicionado | keywords: adicionado
+ - scienceBuddiesRoboticsLessons2025 | abstract: adicionado | keywords: adicionado
+ - nasaRoboticArmChallenge2025 | abstract: adicionado | keywords: adicionado
+ - pbsKidsRoboArm2025 | abstract: adicionado | keywords: adicionado
+ - stempediaQuarky2025 | abstract: adicionado | keywords: adicionado
+ - mikoAIPoweredRobot2025 | abstract: adicionado | keywords: adicionado
+ - firstRobotics2025 | abstract: adicionado | keywords: adicionado
+ - smartCityCuritiba2025 | abstract: adicionado | keywords: adicionado
+ - allConferenceAlertCuritibaTech2025 | abstract: adicionado | keywords: adicionado
+ - spineUpcomingEvents2025 | abstract: adicionado | keywords: adicionado
+ - allConferenceAlertCuritibaMaterialScience2025 | abstract: adicionado | keywords: adicionado
+ - pucprInternational2025 | abstract: adicionado | keywords: adicionado
+ - topUniversitiesUTFPR2025 | abstract: adicionado | keywords: adicionado
+ - unitarCifalCuritibaSTEM2025 | abstract: adicionado | keywords: adicionado
+ - fapespGivingWingsCuriosity2023 | abstract: adicionado | keywords: adicionado
+ - trapero2024didactic | abstract: ok | keywords: adicionado
+ - acf2021innovative | abstract: ok | keywords: adicionado
+ - assessingexhibits | abstract: ok | keywords: adicionado
+ - tpt2025steminterest | abstract: ok | keywords: adicionado
+ - instructables2025firstoutreach | abstract: ok | keywords: adicionado
+ - wsu2025_4hrobotics | abstract: ok | keywords: adicionado
+ - americanscientist2025childrobot | abstract: ok | keywords: adicionado
+ - jetlearn2025ethics | abstract: ok | keywords: adicionado
+ - unesco2025ethicsai | abstract: ok | keywords: adicionado
+ - researchgate2025aiinterfaced | abstract: ok | keywords: adicionado
+ - lee2025designing | abstract: ok | keywords: adicionado
+ - moulton_robotics | abstract: ok | keywords: adicionado
+ - diciurcio2023robots | abstract: ok | keywords: adicionado
+ - serc2024 | abstract: ok | keywords: adicionado
+ - roboshop2025education | abstract: ok | keywords: adicionado
+ - instructables2025robotfriends | abstract: ok | keywords: adicionado
+ - nugent2010impact | abstract: ok | keywords: adicionado
+ - 4events2025straumann | abstract: ok | keywords: adicionado
+
+Entradas com normalização de título/autores:
+ - meegleYouthRobotics2025
+ - acebottImportanceRobotics2025
+ - ross2024BeyondExhibits
+ - cheung2024SummerLibraries
+ - informalscienceFramework2008
+ - rennieKrishnamurthiInformalSTEM2025
+ - unknownEducationalRoboticsAttitudes2023
+ - whalesbotRevolutionizingSTEM2025
+ - almarzooq2025ImpactRoboticsSTEM
+ - lim2024IntegratedSTEMRobotics
+ - behavioralHealthRoboticsAI2025
+ - centrePointRoboticsGames2025
+ - niryoEducationalRobotsSTEM2025
+ - playtoLabsRoboticsKids2023
+ - tiryaki2023StemRoboticCreativity
+ - mosTeachingSTEM2025
+ - fleetScienceCenter2025
+ - bcmSTEAMLab2025
+ - nsfLearningThroughMaking2014
+ - rahman2024DigitalK12HRI
+ - rahman2019MetricsMethodsFCRAR
+ - makeblockMBot22025
+ - coderoboPickPlace2025
+ - vexRoboticsHome2025
+ - robotlabDobotClassroomPack2025
+ - robotshopArmsGrippers2025
+ - scienceBuddiesBuildRoboticArm2025
+ - rancholabsUltimateGuide2025
+ - scienceBuddiesRoboticsProjects2025
+ - scienceBuddiesRobotHand2025
+ - chang2025ConstructedResponse
+ - venezia2025EducationalRobotArm
+ - first2020AtHomeRoboticArmExplore
+ - gonzalez2025HybridPhysicalVirtualArm
+ - techpowerupDobotMagicianReview2017
+ - top3dshopDobotMagicianReview2023
+ - teradyneCollaborativeRobots2025
+ - kinovaJacoAssistiveTechnologies2025
+ - vtRoboticsSafety2025
+ - wikipediaCobot2025
+ - standardBotsCobotSafetyStandards2025
+ - ulSolutionsCollaborativeSafety2025
+ - bostonDynamicsSpot2025
+ - li2023LowCostCableDrivenArm
+ - teachKidsRobotsAreRobotsSafe2025
+ - ulSolutionsRoboticSafetyCertification2025
+ - wefHumanoidRobots2025
+ - techGearLabBestRobotKits2025
+ - scienceCityRivetingRobots2025
+ - youtubeExploringRoboticsKids2025
+ - stempediaProjects2025
+ - scienceBuddiesRoboticsLessons2025
+ - nasaRoboticArmChallenge2025
+ - pbsKidsRoboArm2025
+ - stempediaQuarky2025
+ - mikoAIPoweredRobot2025
+ - firstRobotics2025
+ - smartCityCuritiba2025
+ - allConferenceAlertCuritibaTech2025
+ - spineUpcomingEvents2025
+ - allConferenceAlertCuritibaMaterialScience2025
+ - pucprInternational2025
+ - topUniversitiesUTFPR2025
+ - unitarCifalCuritibaSTEM2025
+ - jeng2017QualitativeDataSharing
+ - sopact2025QuantitativeDataAI
+ - gamarel2021TechDrivenQualYouth
+ - mack2005QualitativeFieldGuide
+ - palmquist2013EngagingYouthNCIL
+ - supersurvey2025STEMElementary
+ - pollmaker2025STEMStudentsSurvey
+ - pivetti2025MeasuringSTEMEngagement
+ - trapero2024didactic
+ - acf2021innovative
+ - assessingexhibits
+ - tpt2025steminterest
+ - instructables2025firstoutreach
+ - wsu2025_4hrobotics
+ - americanscientist2025childrobot
+ - jetlearn2025ethics
+ - unesco2025ethicsai
+ - researchgate2025aiinterfaced
+ - lee2025designing
+ - moulton_robotics
+ - diciurcio2023robots
+ - serc2024
+ - roboshop2025education
+ - instructables2025robotfriends
+ - nugent2010impact
+ - 4events2025straumann

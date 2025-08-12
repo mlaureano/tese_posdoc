@@ -1,0 +1,132 @@
+\section{Tabelas}%
+\label{sect:tab}
+
+Diferentemente de quadros, tabelas são usadas para dados quantitativos, predominantemente preenchidos com informações numéricas e sem as laterais fechadas, conforme o \textcite{IBGE1993}.
+Tabelas podem ser inseridas no documento usando o ambiente \texttt{table}, conforme exemplos em arquivos-fonte deste modelo.
+Sendo assim, a \Cref{tab:ex-1} foi produzida usando este tipo de ambiente.
+
+\begin{table}[!htbp]
+\SetCaptionWidth{\textwidth}
+\caption{Primeiro exemplo de tabela, com legenda contendo um texto muito longo que pode ocupar mais de uma linha}%
+\label{tab:ex-1}
+\begin{tabularx}{\CaptionWidth}{e{}@{}l*{4}{,{}}@{}}
+\toprule%
+\multicolumn{1}{@{}c}{\textbf{Caixa de}}                 &
+\multicolumn{1}{c}{\textbf{Aresta, \MathBF{L}}}          &
+\multicolumn{1}{c}{\textbf{Altura, \MathBF{H}}}          &
+\multicolumn{1}{c}{\textbf{Área, \MathBF{L^2}}}          &
+\multicolumn{1}{c@{}}{\textbf{Volume, \MathBF{L^2 H}}}   \\
+\multicolumn{1}{@{}c}{\textbf{base quadrada}}            &
+\multicolumn{1}{c}{\MathBF{\Unit{\left(cm\right)}}}      &
+\multicolumn{1}{c}{\MathBF{\Unit{\left(cm\right)}}}      &
+\multicolumn{1}{c}{\MathBF{\Unit{\left(cm^2\right)}}}    &
+\multicolumn{1}{c@{}}{\MathBF{\Unit{\left(cm^3\right)}}} \\ \midrule%
+A & 1 & 5 & 1  & 5  \\
+B & 2 & 4 & 4  & 16 \\
+C & 3 & 3 & 9  & 27 \\
+D & 4 & 2 & 16 & 32 \\
+E & 5 & 1 & 25 & 25 \\ \bottomrule%
+\end{tabularx}
+\SourceOrNote{autoria própria (\YearNum)}
+\end{table}
+
+A \Cref{tab:psbl-trpl} é um exemplo de tabela que ocupa mais de uma página, produzida usando o ambiente \texttt{longtable} do pacote de mesmo nome.
+Em cada página, repetem-se a legenda e o cabeçalho; somente na última inserem-se a linha de fechamento e a fonte.
+\Citation[brazilian]{\cite[\ifbool{MakeAcr}{\Abrv{sec}}{Seç.} 8.3 \ppno~29]{IBGE1993}}{Cada página deve ter uma das seguintes indicações: continua para a primeira, conclusão para a última e continuação para as demais}.
+
+\begin{longtable}{e{}@{},{}*{2}{c}@{}}
+%% Cabeçalho da primeira página
+\caption{Possíveis tríplices para grade altamente variável}%
+\label{tab:psbl-trpl}                                         \\[\belowcaptionskip]
+\multicolumn{3}{@{}r@{}}{\textbf{(continua)}}                 \\[\belowcaptionskip]
+\toprule%
+\multicolumn{1}{@{}c}{\textbf{Tempo (s)}}                     &
+\multicolumn{1}{c}{\textbf{Tríplice escolhida}}               &
+\multicolumn{1}{c@{}}{\textbf{Outras possíveis tríplices}}    \\ \midrule%
+\endfirsthead%
+%% Cabeçalho das páginas (exceto primeira e última)
+\caption[]{Possíveis tríplices para grade altamente variável} \\[\belowcaptionskip]
+\multicolumn{3}{@{}r@{}}{\textbf{(continuação)}}              \\[\belowcaptionskip]
+\toprule%
+\multicolumn{1}{@{}c}{\textbf{Tempo (s)}}                     &
+\multicolumn{1}{c}{\textbf{Tríplice escolhida}}               &
+\multicolumn{1}{c@{}}{\textbf{Outras possíveis tríplices}}    \\ \midrule%
+\endhead%
+%% Cabeçalho da última página
+\caption[]{Possíveis tríplices para grade altamente variável} \\[\belowcaptionskip]
+\multicolumn{3}{@{}r@{}}{\textbf{(conclusão)}}                \\[\belowcaptionskip]
+\toprule%
+\multicolumn{1}{@{}c}{\textbf{Tempo (s)}}                     &
+\multicolumn{1}{c}{\textbf{Tríplice escolhida}}               &
+\multicolumn{1}{c@{}}{\textbf{Outras possíveis tríplices}}    \\ \midrule%
+\endlasthead%
+%% Rodapé da última página
+\bottomrule%
+\LTSourceOrNote{adaptada de \textcite{Smallen2014}}           \\
+\endlastfoot%
+0      & (1, 11, 13725) & (1, 12, 10980), (1, 13, 8235), (2, 2, 0), (3, 1, 0) \\
+2745   & (1, 12, 10980) & (1, 13, 8235), (2, 2, 0), (2, 3, 0), (3, 1, 0)      \\
+5490   & (1, 12, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+8235   & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+10980  & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+13725  & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+16470  & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+19215  & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+21960  & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+24705  & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+27450  & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+30195  & (2, 2, 2745)   & (2, 3, 0), (3, 1, 0)                                \\
+32940  & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+35685  & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+38430  & (1, 13, 10980) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+41175  & (1, 12, 13725) & (1, 13, 10980), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+43920  & (1, 13, 10980) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+46665  & (2, 2, 2745)   & (2, 3, 0), (3, 1, 0)                                \\
+49410  & (2, 2, 2745)   & (2, 3, 0), (3, 1, 0)                                \\
+52155  & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+54900  & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+57645  & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+60390  & (1, 12, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+63135  & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+65880  & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+68625  & (2, 2, 2745)   & (2, 3, 0), (3, 1, 0)                                \\
+71370  & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+74115  & (1, 12, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+76860  & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+79605  & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+82350  & (1, 12, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+85095  & (1, 12, 13725) & (1, 13, 10980), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+87840  & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+90585  & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+93330  & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+96075  & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+98820  & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+101565 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+104310 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+107055 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+109800 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+112545 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+115290 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+118035 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+120780 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+123525 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+126270 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+129015 & (2, 2, 2745)   & (2, 3, 0), (3, 1, 0)                                \\
+131760 & (2, 2, 2745)   & (2, 3, 0), (3, 1, 0)                                \\
+134505 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+137250 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+139995 & (2, 2, 2745)   & (2, 3, 0), (3, 1, 0)                                \\
+142740 & (2, 2, 2745)   & (2, 3, 0), (3, 1, 0)                                \\
+145485 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+148230 & (2, 2, 2745)   & (2, 3, 0), (3, 1, 0)                                \\
+150975 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+153720 & (1, 12, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+156465 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+159210 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+161955 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+164700 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+\end{longtable}
+
+Diversas ferramentas podem ser usadas para gerar ou editar tabelas, por exemplo: \ENLang{\href{https://www.tablesgenerator.com/}{Tables Generator\LinkIcon} e \href{https://www.latex-tables.com/}{\ifbool{MakeGly}{\gly*{LaTeX}}{\LaTeX} Tables Editor\LinkIcon}}.
+Tabelas produzidas em planilhas do Microsoft\textsuperscript{\textregistered} Excel\textsuperscript{\textregistered} podem ser convertidas em tabelas \ifbool{MakeGly}{\gly*{LaTeX}}{\LaTeX} usando o suplemento \href{https://www.ctan.org/pkg/excel2latex}{Excel2\ifbool{MakeGly}{\gly*{LaTeX}}{\LaTeX}\LinkIcon}.
+Outro exemplo deste tipo de ilustração é apresentado na \Cref{tab:quot}.

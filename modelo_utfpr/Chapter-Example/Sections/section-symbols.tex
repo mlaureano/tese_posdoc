@@ -1,0 +1,69 @@
+\section{Símbolos}%
+\label{sect:sym}
+
+Símbolos devem ser definidos ao longo do texto antes do seu primeiro uso, ou em um arquivo de entradas.
+Tal arquivo pode ser incluído no preâmbulo do principal arquivo-fonte (ver \texttt{./utfpr-thesis.tex}) pelo comando:
+
+\begin{snugshade}
+\begin{Verbatim}
+\MakeSymbols[File]%% Por exemplo, symbols-entries.tex em ./Pre-Textual/Optionals/
+\end{Verbatim}
+\end{snugshade}
+
+Os termos são definidos usando os comandos do pacote \texttt{utfpr-thesis}:
+
+\begin{snugshade}
+\begin{Verbatim}
+\New<SymbolType>Entry{Label}{%% Usar somente letras latinas não acentuadas
+  Term        = {...},%       % Obrigatório
+  Description = {...},%       % Obrigatório
+  Unit        = {...},%       % Opcional
+  Sort        = {...},%       % Opcional (para reordenar na lista)
+}
+\end{Verbatim}
+\end{snugshade}
+
+\noindent Onde \texttt{<SymbolType>} é igual a \texttt{Notation} (notação), \texttt{Superscript} (sobrescrito), \texttt{Subscript} (subscrito), \texttt{GreekLetter} (letra grega) ou \texttt{LatinLetter} (letra latina).
+
+Para que símbolos sejam impressos em alguma parte do texto do documento e adicionados na \symref, usam-se os comandos do pacote \texttt{utfpr-thesis} apresentados no \Cref{tfrm:sym-cmd}.
+Os comandos de descrição com letras em maiúsculas imprimem a descrição com a letra inicial em maiúscula.
+Por exemplo, \ColorBox{shadecolor}{\Verb|\ltnldescr{A}|} e \ColorBox{shadecolor}{\Verb|\LtnLDescr{A}|} resultam em: \ifbool{MakeSym}{\ltnldescr{A} e \LtnLDescr{A}}{área e Área}, respectivamente.
+
+\begin{tabframed}[!htbp]
+\SetCaptionWidth{\textwidth}
+\caption{Comandos para impressão de símbolos no texto}%
+\label{tfrm:sym-cmd}
+\begin{tabularx}{\CaptionWidth}{?{}l*{3}{|>{\columncolor{shadecolor}}Y}?{}}%% CHKTEX 44
+\toprule%
+\multicolumn{1}{?{}c|}{\textbf{Tipo}}                         &
+\multicolumn{1}{Y|}{\textbf{Termo}\rlap{\MathBF{^{(1)}}}}     &
+\multicolumn{1}{Y|}{\textbf{Descrição}\rlap{\MathBF{^{(1)}}}} &
+\multicolumn{1}{Y?{}}{\textbf{Unidade}}                       \\ \midrule%
+Notação      & \Verb|\nttn{Label}|\rlap{$^{(2)}$} & \Verb|\nttndescr{Label}|                & \Verb|\nttnunit{Label}| \\ \cline{2-4}
+             & {\textendash}                      & \Verb|\NttnDescr{Label}|\rlap{$^{(3)}$} & {\textendash}           \\ \midrule%
+Sobrescrito  & \Verb|\sprs{Label}|                & \Verb|\sprsdescr{Label}|                & \Verb|\sprsunit{Label}| \\ \cline{2-4}
+             & {\textendash}                      & \Verb|\SprsDescr{Label}|\rlap{$^{(3)}$} & {\textendash}           \\ \midrule%
+Subscrito    & \Verb|\sbsc{Label}|                & \Verb|\sbscdescr{Label}|                & \Verb|\sbscunit{Label}| \\ \cline{2-4}
+             & {\textendash}                      & \Verb|\SbscDescr{Label}|\rlap{$^{(3)}$} & {\textendash}           \\ \midrule%
+Letra grega  & \Verb|\grkl{Label}|                & \Verb|\grkldescr{Label}|                & \Verb|\grklunit{Label}| \\ \cline{2-4}
+             & {\textendash}                      & \Verb|\GrkLDescr{Label}|\rlap{$^{(3)}$} & {\textendash}           \\ \midrule%
+Letra latina & \Verb|\ltnl{Label}|                & \Verb|\ltnldescr{Label}|                & \Verb|\ltnlunit{Label}| \\ \cline{2-4}
+             & {\textendash}                      & \Verb|\LtnLDescr{Label}|\rlap{$^{(3)}$} & {\textendash}           \\ \bottomrule%
+\end{tabularx}
+\SourceOrNote{autoria própria (\YearNum)}
+\SourceOrNote+*[\MathBF{^{(1)}}][]{Adiciona (automaticamente) também no \protect\idxref\ com um asterisco (*) opcional, por exemplo, \ColorBox{shadecolor}{\protect\Verb|\nttn*{Label}|}}
+\SourceOrNote+*[\MathBF{^{(2)}}][]{Armazena um símbolo no comando \ColorBox{shadecolor}{\protect\Verb|\MrkSym|} (o caractere tipográfico \DottedCircle\ por padrão, no qual se aplica a notação durante a impressão da mesma) com um segundo argumento (opcional: {\ColorBox{shadecolor}{\protect\Verb|\nttn{Label}[MrkSym]|}})}
+\SourceOrNote+*[\MathBF{^{(3)}}][]{Imprime com a letra inicial em maiúscula}
+\end{tabframed}
+
+Alguns exemplos de símbolos:
+
+\begin{itemize}
+\item Notações: \ifbool{MakeSym}{\nttn{averagea} representa a \nttndescr{averagea}, \nttn{averageb} representa a \nttndescr{averageb} e \nttn*{gradient} representa o \nttndescr*{gradient}}{$\overline{\MrkSym}$ representa a média temporal, $\langle\MrkSym\rangle$ representa a média na seção transversal e $\vec{\nabla}$ representa o operador gradiente}.
+\item Sobrescritos: \ifbool{MakeSym}{\MrkSym\sprs{minus} representa o \sprsdescr{minus}, \MrkSym\sprs{plus} representa o \sprsdescr{plus} e \MrkSym\sprs*{zero} representa o \sprsdescr*{zero}}{$\MrkSym^-$ representa o passo de tempo anterior, $\MrkSym^+$ representa o passo de tempo posterior e $\MrkSym^0$ representa o valor inicial}.
+\item Subscritos: \ifbool{MakeSym}{\MrkSym\sbsc{G} representa a \sbscdescr{G}, \MrkSym\sbsc{L} representa a \sbscdescr{L} e \MrkSym\sbsc*{S} representa a \sbscdescr*{S}}{$\MrkSym_\mathrm{G}$ representa a fase gasosa, $\MrkSym_\mathrm{L}$ representa a fase líquida e $\MrkSym_\mathrm{S}$ representa a fase sólida}.
+\item Letras gregas: \ifbool{MakeSym}{\grkl{mu} é a \grkldescr{mu} [\grklunit{mu}], \grkl{nu} é a \grkldescr{nu} (\grklunit{nu}), \grkl{pi} é a \grkldescr{pi} (\grklunit{pi}), \grkl{rho} é a \grkldescr{rho} (\grklunit{rho}) e \grkl*{theta} é a \grkldescr*{theta} (\grklunit{theta})}{$\mu$ é a viscosidade dinâmica [\Unit{kg/{(m{\cdot}s)}}], $\nu$ é a viscosidade cinemática (\Unit{m^2/s}), $\pi$ é a constante circular (\Unit{rad}), $\rho$ é a massa específica (\Unit{kg/m^3}) e $\theta$ é a inclinação (\Unit{\Degree})}.
+\item Letras latinas: \ifbool{MakeSym}{\ltnl{A} é a \ltnldescr{A} (\ltnlunit{A}), \ltnl{D} é o \ltnldescr{D} (\ltnlunit{D}), \ltnl{L} é o \ltnldescr{L} (\ltnlunit{L}), \ltnl{R} é o \ltnldescr{R} (\ltnlunit{R}), \ltnl*{Re} é o \ltnldescr*{Re} e \ltnl*{V} é a \ltnldescr*{V} (\ltnlunit{V})}{$A$ é a área (\Unit{m^2}), $D$ é o diâmetro (\Unit{m}), $L$ é o comprimento (\Unit{m}), $R$ é o raio (\Unit{m}), $\mathrm{Re}$ é o número de Reynolds e $V$ é a velocidade (\Unit{m/s})}.
+\end{itemize}
+
+Os símbolos de quantidades (grandezas) e unidades devem ser expressos conforme \textcite{Inmetro2021}.

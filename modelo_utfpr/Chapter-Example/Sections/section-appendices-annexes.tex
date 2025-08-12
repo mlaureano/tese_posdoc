@@ -1,0 +1,24 @@
+\section{Apêndices e anexos}%
+\label{sect:apx-anx}
+
+O comando \ColorBox{shadecolor}{\Verb|\appendix|} faz com que todos os capítulos\phantomsection\label{err:chpt-6} subsequentes sejam considerados e formatados como \apxsref.
+Neste modelo, os mesmos podem ser inseridos no ambiente \texttt{Appendices} para produzir \apxsref, ou ainda no ambiente \texttt{Annexes}, para produzir \anxsref, ambos do pacote \texttt{utfpr-thesis}.
+Os comandos \ColorBox{shadecolor}{\Verb|\AppendicesPart|} e \ColorBox{shadecolor}{\Verb|\AnnexesPart|} produzem as folhas separadoras (similar ao comando \ColorBox{shadecolor}{\Verb|\part|}) denominadas \apxsref\ e \anxsref, respectivamente.
+
+\apxsref\ e \anxsref\ podem ser inseridos no documento, logo após o \glyref, por meio da inclusão de arquivos.
+Ver orientações sobre inclusão de arquivos na \Cref{sect:files-incl}.
+Por exemplo, os arquivos-fonte \texttt{appendix-a.tex}, \texttt{appendix-b.tex}, \texttt{annex-a.tex} e \texttt{annex-b.tex}, presentes em \texttt{./Post-Textual/} deste modelo, são usados para produzir os \Cref{chpt:apx-a,chpt:apx-b} e os \Cref{chpt:anx-a,chpt:anx-b}, respectivamente.
+É possível dividir os \apxsref\ e \anxsref\ em seções, conforme exemplos:
+
+\begin{itemize}
+\item Seção secundária de apêndice (\Cref{sect:apx-a2}).
+\item Seção terciária de apêndice (\Cref{ssect:apx-a3}).
+\item Seção quaternária de apêndice (\Cref{sssect:apx-a4}).
+\item Seção quinária de apêndice (\Cref{prgh:apx-a5}).
+\item Parágrafo (divisão de seção quinária) de apêndice (\Cref{sprgh:apx-a6}).
+\item Seção secundária de anexo (\Cref{sect:anx-b2}).
+\item Seção terciária de anexo (\Cref{ssect:anx-b3}).
+\item Seção quaternária de anexo (\Cref{sssect:anx-b4}).
+\item Seção quinária de anexo (\Cref{prgh:anx-b5}).
+\item Parágrafo (divisão de seção quinária) de anexo (\Cref{sprgh:anx-b6}).
+\end{itemize}

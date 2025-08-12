@@ -1,0 +1,69 @@
+\section{Equações}%
+\label{sect:eq}
+
+\ifbool{MakeGly}{\gly*{LaTeX}}{\LaTeX} é insuperável no processamento de equações.
+Símbolos ou expressões matemáticas simples podem ser inseridos ao longo do texto de um parágrafo usando o ambiente \texttt{math} (ver \Cref{sect:math}) ou os comandos para impressão de símbolos definidos na \Cref{sect:sym}.
+Por exemplo: $\nu = \mu / \rho$, sendo \ifbool{MakeSym}{\grkl{nu} a \grkldescr{nu}, \grkl{mu} a \grkldescr{mu} e \grkl{rho} a \grkldescr{rho}}{$\nu$ a viscosidade cinemática, $\mu$ a viscosidade dinâmica e $\rho$ a massa específica}.
+
+Equações simples como $A = \pi D^2 / 4$ podem ser adicionadas ao longo do texto de um parágrafo ou em uma linha própria usando o ambiente \texttt{displaymath}:
+\begin{displaymath}
+A = \frac{\pi D^2}{4} \equiv \pi R^2
+\end{displaymath}
+
+\noindent Sendo \ifbool{MakeSym}{\ltnl{A} a \ltnldescr{A}, \grkl{pi} a \grkldescr{pi}, \ltnl{D} ($\equiv 2 R$) o \ltnldescr{D} e \ltnl{R} o \ltnldescr{R}}{$A$ a área, $\pi$ a constante circular (Pi), $D$ ($\equiv 2 R$) o diâmetro e $R$ o raio}.
+
+Por outro lado, o ambiente \texttt{equation} pode ser usado para gerar equações então numeradas automaticamente e podem ser referenciadas ao longo do texto.
+Por exemplo, a \Cref{eq:p-gamma} é trivialmente derivada da \Cref{eq:T-r}:
+\begin{equation}%
+\label{eq:p-gamma}
+\begin{array}{lcl}
+p \left(\gamma\right)
+& = &
+\frac{1}{2}
+\sqrt{\frac{M}{\gamma \bar{\gamma}_b}}
+\frac{1}{\prod_{i = 1}^M \sqrt{\tilde{\gamma}_i}}
+\int_0^{\sqrt{M \delta}}
+\int_0^{\sqrt{M \delta} - r_M} \cdots
+\int_0^{\sqrt{M \delta} - \sum_{i = 3}^M r_i} \\[0.5\onelineskip]
+& &
+p \left(%
+  \frac{\sqrt{M \delta} - \sum_{i = 2}^M r_i}{\sqrt{\tilde{\gamma}_1}},
+  \frac{r_2}{\sqrt{\tilde{\gamma}_2}}, \ldots,
+  \frac{r_M}{\sqrt{\tilde{\gamma}_M}}
+\right) \, \mathrm{d} r_2 \cdots \mathrm{d} r_{M - 1} \, \mathrm{d} r_M
+\end{array}
+\end{equation}
+\begin{equation}%
+\label{eq:T-r}
+T \left(r\right) =
+\frac{1}{f_m}
+{\left(%
+  \frac{\pi}{2} \sum_{i = 1}^M {\tilde{r}_i^2 \dot{\varsigma}_i^2}
+\right)}^{-1/2}
+\frac{%
+  \begin{array}{l}
+  \int_0^{\rho \sqrt{M}}
+  \int_0^{\rho \sqrt{M} - r_M} \cdots
+  \int_0^{\rho \sqrt{M} - \sum_{i = 3}^M r_i}
+  \int_0^{\rho \sqrt{M} - \sum_{i = 2}^M r_i} \\[0.5\onelineskip]
+  p \left(%
+    \frac{r_1}{\tilde{r}_1},
+    \frac{r_2}{\tilde{r}_2}, \ldots,
+    \frac{r_M}{\tilde{r}_M}
+  \right) \, \mathrm{d} r_1 \, \mathrm{d} r_2 \cdots \mathrm{d} r_{M - 1} \, \mathrm{d} r_M \\[0.5\onelineskip]
+  \end{array}
+}{%
+  \begin{array}{l}
+  \int_0^{\rho \sqrt{M}}
+  \int_0^{\rho \sqrt{M} - r_M} \cdots
+  \int_0^{\rho \sqrt{M} - \sum_{i = 3}^M r_i} \\[0.5\onelineskip]
+  p \left(%
+    \frac{\rho \sqrt{M} - \sum_{i = 2}^M r_i}{\tilde{r}_1},
+    \frac{r_2}{\tilde{r}_2}, \ldots,
+    \frac{r_M}{\tilde{r}_M}
+  \right) \, \mathrm{d} r_2 \cdots \mathrm{d} r_{M - 1} \, \mathrm{d} r_M \\[0.5\onelineskip]
+  \end{array}
+}
+\end{equation}
+
+Diversas ferramentas podem ser usadas para gerar ou editar equações, por exemplo: \ENLang{\href{https://formulasheet.com/}{Formula Sheet\LinkIcon} e \href{https://www.tutorialspoint.com/latex_equation_editor.htm}{\ifbool{MakeGly}{\gly*{LaTeX}}{\LaTeX} Equation Editor (\textit{by} Tutorials Point)\LinkIcon}}.

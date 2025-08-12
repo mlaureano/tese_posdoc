@@ -1,0 +1,19 @@
+\documentclass[tikz]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb}
+\begin{document}
+\begin{tikzpicture}[font = \tiny]
+\draw[dashed, color = gray] (0, 0) arc     (-90 : 90 : 0.5 and 1);
+\draw[semithick]            (0, 0) --      (5, 0.5);
+\draw[semithick]            (0, 2) --      (5, 1.5);
+\draw[semithick]            (0, 0) arc     (270 : 90 : 0.5 and 1);
+\draw[semithick]            (5, 1) ellipse (0.25 and 0.5);
+\draw (0, 2.1) node {$\varnothing d_1$};
+\draw (5, 1.6) node {$\varnothing d_2$};
+\draw[|-, semithick]  (0, -0.25) -- (5, -0.25);
+\draw[|->, semithick] (5, -0.25) -- (5.5, -0.25);
+\draw (0, -0.5) node {$x = 0$};
+\draw (5, -0.5) node {$x = l$};
+\end{tikzpicture}
+\end{document}

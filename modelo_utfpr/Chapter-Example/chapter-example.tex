@@ -1,0 +1,177 @@
+%%%% CAPÍTULO DE EXEMPLO
+%%
+%% Capítulo de informações e exemplos de utilização deste modelo.
+
+%% Locais (pastas) de ilustrações deste capítulo
+\graphicspath{%
+  {./Chapter-Example/}%% Primário
+  {./Chapter-Example/Illustrations/}%% Secundário (descomentar se houver)
+}
+
+\chapter{\UTFPR-Thesis: Informações e Exemplos}%
+\label{chpt:ex}
+
+Devido à necessidade de padronização em trabalhos acadêmicos, como \ifbool{MakeGly}{\glypl*{tese}, \glypl*{dissertacao}}{teses, dissertações}, trabalhos de conclusão de curso \textemdash\ \ifbool{MakeAcr}{\intl*{TCC}\index{Trabalho de Conclusão de Curso}}{TCC} \textemdash, entre outros, a aplicação de algumas regras essenciais para estruturação e formatação é requerida.
+
+Deste modo, o presente documento foi gerado e pode ser editado usando \ifbool{MakeGly}{\gly*{UTFPRThesis}, um \glydescr{UTFPRThesis}}{\UTFPR-Thesis, um modelo \LaTeX\ que permite atender os requisitos das normas definidas pela UTFPR para elaboração de trabalhos acadêmicos}.
+Este modelo foi desenvolvido com base na classe de documento \ifbool{MakeGly}{\gly*{LaTeX}}{\LaTeX} denominada \texttt{\ifbool{MakeGly}{\gly*{memoir}}{memoir}}, de modo a atender os requisitos das normas da \ifbool{MakeAcr}{\intldescr{ABNT} (\intl{ABNT})}{Associação Brasileira de Normas Técnicas (ABNT)} para elaboração de documentos técnicos e científicos brasileiros.
+
+O principal arquivo-fonte deste modelo é o \texttt{./utfpr-thesis.tex} que, além de permitir a definição de informações sobre documento, autor{(es)}, orientador{(es)} e instituição, entre outras, constitui a estrutura central deste modelo e tem por finalidade:
+
+\begin{itemize}
+\item Definir a classe de documento do modelo \ifbool{MakeGly}{\gly*{UTFPRThesis}}{\UTFPR-Thesis} como sendo a \texttt{\ifbool{MakeGly}{\gly*{memoir}}{memoir}} e atribuir suas opções.
+\item Utilizar o pacote de estilos denominado \texttt{utfpr-thesis} (que contém as configurações do modelo) e atribuir suas opções.
+\item Permitir a utilização de pacotes adicionais e a definição de comandos e ambientes personalizados.
+\item Incluir arquivos auxiliares, por exemplo, elementos pré-textuais, textuais e pós-textuais, entre outros.
+\end{itemize}
+
+O modelo tem suporte somente para os idiomas português e inglês, que podem se alternar entre idiomas primário e secundário.
+A \href{https://en.wikibooks.org/wiki/LaTeX/Special_Characters}{codificação de caracteres\LinkIcon} em todos os arquivos deste modelo usa o \ifbool{MakeAcr}{\intldescr{UTF8} (\intldescr+{UTF8} \textemdash\ \intl{UTF8})}{Formato de Transformação Unicode de 8-bit (\ENLang*{8-bit Unicode Transformation Format} \textemdash\ UTF-8)}.
+Portanto, é necessário que a mesma codificação seja usada na inclusão de novos arquivos, inclusive nos arquivos de base bibliográfica.
+Diversos editores de arquivos-fonte conseguem manipular ou converter entre diferentes codificações, por exemplo, \href{https://www.xm1math.net/texmaker/}{Texmaker\LinkIcon}\ifbool{MakeGly}{\index{TeX?\TeX !LaTeX?\LaTeX !Texmaker}}{}.
+Sempre que for manipular ou substituir um dos arquivos constituintes deste modelo, é recomendado manter uma cópia do original em um local seguro, renomeando-o para poder ser usado como um exemplo no desenvolvimento do seu próprio arquivo.
+Ou ainda, podem ser comentadas as linhas de código e texto do arquivo-fonte que se deseja remover ou substituir.
+
+Este \ifbool{MakeAcr}{\abrvdescr{cap}\phantomsection\label{err:chpt-1} (\abrv{cap})}{capítulo\phantomsection\label{err:chpt-1} (cap.)} é uma \ifbool{MakeAcr}{\abrvdescr{sec} (\abrv{sec})}{seção (seç.)} primária e tem por finalidade a definição e a apresentação de alguns comandos e ambientes do \ifbool{MakeGly}{\gly*{LaTeX}}{\LaTeX} e do pacote \texttt{utfpr-thesis}.
+Observar comentários em todos os arquivos-fonte do projeto para entender configurações e formatações no modelo.
+O presente documento não se constitui um manual, tampouco uma apostila sobre \ifbool{MakeGly}{\gly*{TeX}/\gly*{LaTeX}}{\TeX/\LaTeX}, visto que existe uma substancial quantidade de material de referência disponível na Internet, por exemplo:
+
+\begin{itemize}
+\selectlanguage{english}
+\item \href{https://www.latex-project.org/}{\ifbool{MakeGly}{\gly*{LaTeX}}{\LaTeX} Project\LinkIcon}.
+\item \href{https://www.ctan.org/}{\ifbool{MakeAcr}{\intldescr{CTAN} (\intl{CTAN})}{Comprehensive \TeX\ Archive Network (CTAN)}\LinkIcon}.
+\item \href{https://www.tug.org/}{\ifbool{MakeAcr}{\intldescr{TUG} (\intl{TUG})}{\TeX\ Users Group (TUG)}\LinkIcon}.
+\item \href{https://en.wikibooks.org/wiki/LaTeX/}{\ifbool{MakeGly}{\gly*{LaTeX}}{\LaTeX} \textemdash\ Wikibooks\LinkIcon}.
+\item \href{https://tex.stackexchange.com/}{\ifbool{MakeGly}{\gly*{TeX}-\gly*{LaTeX}}{\TeX-\LaTeX} Stack Exchange\LinkIcon}.
+\end{itemize}
+
+Seções primárias devem conter uma introdução, que fornece ao leitor uma breve descrição do assunto tratado, e um fecho, que apresenta comentários finais sobre o que foi desenvolvido.
+As seções primárias podem apresentar subdivisões, que devem ser lógicas (temática) e não físicas (por tamanho).
+O número ideal de subdivisões é impossível de se precisar.
+Entretanto, uma seção primária sem subdivisões deve ser agregada à anterior ou à posterior, possivelmente.
+Por outro lado, uma seção primária com quinze subdivisões deve ser subdividida em duas outras, possivelmente.
+Capítulos\phantomsection\label{err:chpt-2}, seções e subseções\phantomsection\label{err:ssect} devem ser rotulados para poderem ser referenciados em qualquer parte do texto.
+Deste modo, o título do \Cref{chpt:ex} é impresso, rotulado e referenciado pelos respectivos comandos:
+
+\begin{snugshade}
+\begin{Verbatim}
+\chapter{\UTFPR-Thesis: Informações e Exemplos}%% Imprime
+\label{chpt:ex}%                                % Rotula
+\Cref{chpt:ex}%                                 % Referencia
+\end{Verbatim}
+\end{snugshade}
+
+\section{Título de seção secundária}%
+\label{sect:lvl-2}
+
+Seções secundárias são divisões do conteúdo das seções primárias.
+O título da \Cref{sect:lvl-2} é impresso, rotulado e referenciado pelos respectivos comandos:
+
+\begin{snugshade}
+\begin{Verbatim}
+\section{Título de seção secundária}%% Imprime
+\label{sect:lvl-2}%                  % Rotula
+\Cref{sect:lvl-2}%                   % Referencia
+\end{Verbatim}
+\end{snugshade}
+
+\subsection{Título de seção terciária}%
+\label{ssect:lvl-3}
+
+Seções terciárias são divisões do conteúdo de seções secundárias.
+O título da \Cref{ssect:lvl-3} é impresso, rotulado e referenciado pelos respectivos comandos:
+
+\begin{snugshade}
+\begin{Verbatim}
+\subsection{Título de seção terciária}%% Imprime
+\label{ssect:lvl-3}%                   % Rotula
+\Cref{ssect:lvl-3}%                    % Referencia
+\end{Verbatim}
+\end{snugshade}
+
+\subsubsection{Título de seção quaternária}%
+\label{sssect:lvl-4}
+
+Seções quaternárias são divisões do conteúdo de seções terciárias.
+O título da \Cref{sssect:lvl-4} é impresso, rotulado e referenciado pelos respectivos comandos:
+
+\begin{snugshade}
+\begin{Verbatim}
+\subsubsection{Título de seção quaternária}%% Imprime
+\label{sssect:lvl-4}%                       % Rotula
+\Cref{sssect:lvl-4}%                        % Referencia
+\end{Verbatim}
+\end{snugshade}
+
+\paragraph{Título de seção quinária}%
+\label{prgh:lvl-5}
+
+Seções quinárias são divisões do conteúdo de seções quaternárias.
+O título da \Cref{prgh:lvl-5} é impresso, rotulado e referenciado pelos respectivos comandos:
+
+\begin{snugshade}
+\begin{Verbatim}
+\paragraph{Título de seção quinária}%% Imprime
+\label{prgh:lvl-5}%                  % Rotula
+\Cref{prgh:lvl-5}%                   % Referencia
+\end{Verbatim}
+\end{snugshade}
+
+\subparagraph{Título de parágrafo (divisão de seção quinária)}%
+\label{sprgh:lvl-6}
+
+exemplo de parágrafo (divisão de seção quinária) (\Cref{sprgh:lvl-6}).
+
+\section{Título de seção secundária, com texto muito longo que pode ocupar mais de uma linha}%
+\label{sect:long-title}
+
+A \Cref{sect:long-title} apresenta um exemplo de título de seção secundária com texto muito longo, formatado automaticamente conforme a \textcites[\ifbool{MakeAcr}{\Abrv{sec}}{Seç.} 5.2.2 \ppno~10 da \ifbool{MakeAcr}{\intldescr*{NBR} (\intl*{NBR})}{Norma Brasileira (NBR)} 14724]{ABNT2011NBR14724}[\ifbool{MakeAcr}{\Abrv{sec}}{Seç.} 4.1 \ppno~2 da \ifbool{MakeAcr}{\intl{NBR}}{NBR} 6024]{ABNT2012NBR6024}.
+Segundo as normas, \enquote{títulos com indicação numérica, que ocupem mais de uma linha, devem ser, a partir da segunda linha, alinhados abaixo da primeira letra da primeira palavra do título}.
+
+%% Regras gerais de apresentação
+% \input{./Chapter-Example/Sections/section-rules}
+
+%% Elementos pré-textuais
+% \input{./Chapter-Example/Sections/section-pre-textual}
+
+%% Enumerações: alíneas e subalíneas
+% \input{./Chapter-Example/Sections/section-enumerations}
+
+%% Citações
+% \input{./Chapter-Example/Sections/section-citations}
+
+%% Equações
+% \input{./Chapter-Example/Sections/section-equations}
+
+%% Algoritmos
+% \input{./Chapter-Example/Sections/section-algorithms}
+
+%% Ilustrações
+% \input{./Chapter-Example/Sections/section-illustrations}
+
+%% Tabelas
+% \input{./Chapter-Example/Sections/section-tables}
+
+%% Abreviaturas e siglas
+% \input{./Chapter-Example/Sections/section-acronyms}
+
+%% Símbolos
+% \input{./Chapter-Example/Sections/section-symbols}
+
+%% Referências
+% \input{./Chapter-Example/Sections/section-references}
+
+%% Glossário
+% \input{./Chapter-Example/Sections/section-glossary}
+
+%% Apêndices e Anexos
+% \input{./Chapter-Example/Sections/section-appendices-annexes}
+
+%% Índice Remissivo
+% \input{./Chapter-Example/Sections/section-index}
+
+%% Inclusão de arquivos
+% \input{./Chapter-Example/Sections/section-inclusion}
+
+%% Compilação de documento LaTeX
+% \input{./Chapter-Example/Sections/section-compilation}

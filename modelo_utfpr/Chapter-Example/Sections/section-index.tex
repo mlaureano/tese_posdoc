@@ -1,0 +1,36 @@
+\section{Índice remissivo}%
+\label{sect:idx}
+
+Palavras ou símbolos são indexados no \idxref\ usando os seguintes comandos:
+
+\begin{snugshade}
+\begin{Verbatim}
+\index{Header to Index}%                % Padrão do makeindex
+\Index{Header to Index}[Header to Sort]%% Definido no pacote utfpr-thesis
+\end{Verbatim}
+\end{snugshade}
+
+\noindent O primeiro somente indexa (padrão do makeindex\footnote{Ver manual do \href{https://www.ctan.org/pkg/makeindex}{\texttt{makeindex}\LinkIcon} para mais detalhes}) e o segundo indexa e imprime localmente o argumento obrigatório\footnote{O argumento opcional possibilita reordenar no \idxref} (definido no pacote \texttt{utfpr-thesis}).
+
+Para complementação, argumentos opcionais podem ser adicionados antes do obrigatório no segundo comando para indexar em subdivisões (no máximo, mais dois níveis), além de imprimir localmente:
+
+\begin{snugshade}
+\begin{Verbatim}
+\Index{Header to Index}%                                         % Nível 1
+\Index[Indexed Header]{Subheader to Index}%                      % Nível 2
+\Index[Indexed Header][Indexed Subheader]{Subsubheader to Index}%% Nível 3
+\end{Verbatim}
+\end{snugshade}
+
+\noindent Por exemplo: a \Index{casa} possui uma \Index[casa]{porta} de \Index[casa][porta]{madeira} e uma \Index[casa]{janela} de \Index[casa][janela]{metal}.
+
+O pacote \texttt{utfpr-thesis} também fornece comandos para indexar palavras ou símbolos a suas remissivas e imprimi-las localmente:
+
+\begin{snugshade}
+\begin{Verbatim}
+\IndexSee{Header to Index}{Indexed Remissive}%    % Remissiva ver
+\IndexSeeAlso{Header to Index}{Indexed Remissive}%% Remissiva ver também
+\end{Verbatim}
+\end{snugshade}
+
+\noindent Por exemplo: \Index{rato}-\Index[rato]{doméstico}, \IndexSee{camundongo}{rato} (sinônimo) e \IndexSeeAlso{ratazana}{rato} (termo correlato).

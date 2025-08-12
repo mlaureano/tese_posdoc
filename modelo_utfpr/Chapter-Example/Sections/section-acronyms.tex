@@ -1,0 +1,58 @@
+\section{Abreviaturas e siglas}%
+\label{sect:acr}
+
+Abreviaturas e siglas podem ser definidas ao longo do texto, preferencialmente antes do seu primeiro uso, ou em um arquivo de entradas.
+Tal arquivo pode ser incluído no preâmbulo do principal arquivo-fonte (ver \texttt{./utfpr-thesis.tex}) pelo comando:
+
+\begin{snugshade}
+\begin{Verbatim}
+\MakeAcronyms[File]%% Por exemplo, acronyms-entries.tex em ./Pre-Textual/Optionals/
+\end{Verbatim}
+\end{snugshade}
+
+Os termos são definidos usando os comandos do pacote \texttt{utfpr-thesis}:
+
+\begin{snugshade}
+\begin{Verbatim}
+\New<AcronymType>Entry{Label}{%% Usar somente letras latinas não acentuadas
+  Term        = {...},%        % Obrigatório
+  Description = {...},%        % Obrigatório
+  Plural      = {...},%        % Opcional
+  Translation = {...},%        % Opcional (descrição original em inglês)
+}
+\end{Verbatim}
+\end{snugshade}
+
+\noindent Onde \texttt{<AcronymType>} é igual a \texttt{Abbreviation} (abreviatura) ou \texttt{Initials} (sigla).
+
+Para que abreviaturas e siglas sejam impressos em alguma parte do texto do documento e adicionados na \acrref, usam-se os comandos do pacote \texttt{utfpr-thesis} apresentados no \Cref{tfrm:acr-cmd}.
+Os comandos com letras em maiúscula imprimem o termo, a descrição e o plural (se definido) com a letra inicial em maiúscula.
+Por exemplo, \ColorBox{shadecolor}{\Verb|\abrv{cap}|} e \ColorBox{shadecolor}{\Verb|\Abrv{cap}|} resultam em: \ifbool{MakeAcr}{\abrv{cap} e \Abrv{cap}}{cap.\ e Cap.}, respectivamente.
+
+\begin{tabframed}[!htbp]
+\SetCaptionWidth{\textwidth}
+\caption{Comandos para impressão de abreviaturas e siglas no texto}%
+\label{tfrm:acr-cmd}
+\begin{tabularx}{\CaptionWidth}{?{}l*{3}{|>{\columncolor{shadecolor}}Y}?{}}%% CHKTEX 44
+\toprule%
+\multicolumn{1}{?{}c|}{\textbf{Tipo}}                                &
+\multicolumn{1}{Y|}{\textbf{Termo}\rlap{\MathBF{^{(1)}}}}            &
+\multicolumn{1}{Y|}{\textbf{Descrição}\rlap{\MathBF{^{{(1)}{(2)}}}}} &
+\multicolumn{1}{Y?{}}{\textbf{Plural}\rlap{\MathBF{^{(1)}}}}         \\ \midrule%
+Abreviatura & \Verb|\abrv{Label}|                & \Verb|\abrvdescr{Label}|                & \Verb|\abrvpl{Label}|                \\ \cline{2-4}
+            & \Verb|\Abrv{Label}|\rlap{$^{(3)}$} & \Verb|\AbrvDescr{Label}|\rlap{$^{(3)}$} & \Verb|\AbrvPl{Label}|\rlap{$^{(3)}$} \\ \midrule%
+Sigla       & \Verb|\intl{Label}|                & \Verb|\intldescr{Label}|                & \Verb|\intlpl{Label}|                \\ \cline{2-4}
+            & \Verb|\Intl{Label}|\rlap{$^{(3)}$} & \Verb|\IntlDescr{Label}|\rlap{$^{(3)}$} & \Verb|\IntlPl{Label}|\rlap{$^{(3)}$} \\ \bottomrule%
+\end{tabularx}
+\SourceOrNote{autoria própria (\YearNum)}
+\SourceOrNote+*[\MathBF{^{(1)}}][]{Adiciona (automaticamente) também no \protect\idxref\ com um asterisco (*) opcional, por exemplo, \ColorBox{shadecolor}{\protect\Verb|\abrv*{Label}|}}
+\SourceOrNote+*[\MathBF{^{(2)}}][]{Imprime a descrição original em inglês (se definida) com um sinal de mais (+) opcional, por exemplo, \ColorBox{shadecolor}{\protect\Verb|\abrvdescr+{Label}|}}
+\SourceOrNote+*[\MathBF{^{(3)}}][]{Imprime com a letra inicial em maiúscula}
+\end{tabframed}
+
+Alguns exemplos de abreviaturas e siglas:
+
+\begin{itemize}
+\item Abreviaturas: \ifbool{MakeAcr}{\abrvdescr*{1D} (\abrv*{1D}; no plural, \abrvpl*{1D}), \abrvdescr*{art} (\abrv*{art}; no plural, \abrvpl*{art}), \abrvdescr{cap}\phantomsection\label{err:chpt-5} (\abrv{cap}; no plural, \abrvpl{cap}) e \abrvdescr{sec} (\abrv{sec}; no plural, \abrvpl{sec})}{unidimensional (1D\@; no plural, 1Ds), artigo (art.; no plural, arts.), capítulo\phantomsection\label{err:chpt-5} (cap.; no plural, caps.) e seção (seç.; no plural, seçs.)}.
+\item Siglas: \ifbool{MakeAcr}{\intldescr{CAPES} (\intl{CAPES}), \intldescr{CNPq} (\intl{CNPq}) e \intldescr{GNU} (\intldescr+{GNU} \textemdash\ \intl{GNU})}{Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (CAPES), Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq) e GNU Não é Unix (\ENLang*{GNU is Not Unix} \textemdash\ GNU)}.
+\end{itemize}
