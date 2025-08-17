@@ -154,7 +154,7 @@ The study details the ideal characteristics for selecting robotic arms, the prot
 \makeindex%
 
 %% Arquivo(s) de referências
-\addbibresource{utfpr-article.bib}
+\addbibresource{atualizado_completo_normalizado.bib}
 
 %% Início do documento
 \begin{document}
@@ -181,298 +181,102 @@ Espaços físicos projetados, como museus e centros de ciência, facilitam a apr
 A capacidade desses ambientes informais de capturar o interesse fora das estruturas convencionais os posiciona como portas de entrada eficazes para o STEAM. Eles não são meramente atividades suplementares, mas componentes essenciais do pipeline de educação STEAM. A sua singularidade em despertar a curiosidade e o engajamento, de forma mais flexível e menos estruturada do que o ensino formal, torna-os ideais para alcançar públicos diversos e servir como um ponto de partida crítico para o envolvimento com STEAM. Isso implica a necessidade de parcerias estratégicas entre provedores de aprendizagem informal, instituições de ensino formal e a indústria, a fim de criar caminhos contínuos desde a inspiração inicial até a busca sustentada de estudos e carreiras em STEAM.
 
 
-Os trabalhos devem ser redigidos na ortografia oficial e digitados em folhas de papel tamanho A4.
-O trabalho deve conter de \ifbool{@LayoutA}{3 (três)}{4 (quatro)} a 6 (seis) páginas, incluindo: \nameref{sect:intro}, \nameref{sect:mat-meth}, \nameref{sect:res-disc}, \nameref{sect:concl} e Agradecimentos (com menção ao fomento recebido, se houver)\ifbool{@LayoutA}{}{, assim como informações sobre material suplementar, disponibilidade de código e conflito de interesse, se aplicáveis}.
-Nesta contagem de páginas, \ifbool{@LayoutA}{excetuam-se}{incluem-se} a página inicial (título em português, título em inglês, autoria e afiliações, resumo, palavras-chave, \ENLang{abstract} e \ENLang{keywords}) e as referências.
+\subsection{Objetivos e Estrutura do artigo}
+Este trabalho tem como objetivo analisar a aplicação de braços robóticos em feiras de tecnologia e mostras científicas como uma ferramenta para motivar, incentivar e despertar o interesse de crianças e adolescentes na pesquisa robótica. Para tanto, o documento apresentará uma revisão bibliográfica detalhada sobre o impacto da robótica educacional, orientações para a seleção e prototipagem de cenários, metodologias para avaliação do engajamento e análise de dados, documentação de melhores práticas e a proposição de diretrizes para uma implementação eficaz e segura.
 
-Sugere-se digitar o trabalho usando este modelo, denominado \UTFPR-Article, em um editor para \LaTeX\index{TeX@\TeX!LaTeX@\LaTeX}\footnote{Para compilação, usar \texttt{pdflatex} (preferencialmente), \texttt{lualatex} ou \texttt{xelatex} (em último caso)} (ao invés de aplicativos como Microsoft\textsuperscript{\textregistered} Word\textsuperscript{\textregistered}, LibreOffice\textsuperscript{\textregistered} Writer, Google Docs e similares).
-O arquivo para submissão deve ser um PDF\footnote{Pode ser convertido para PDF/A em: \url{https://www.pdfforge.org/online/en/pdf-to-pdfa}} (\ENLang*{Portable Document Format} ou Formato de Documento Portátil), sendo o único formato aceito para avaliação, evitando problemas de formatação.
 
-Informações e dicas sobre \TeX\index{TeX@\TeX}/\LaTeX\index{TeX@\TeX!LaTeX@\LaTeX} podem ser obtidas em:
+\section{Revisão Bibliográfica: Impacto da Robótica Educacional no Engajamento STEAM de Jovens}
+A literatura científica demonstra o papel transformador da robótica educacional (RE) no engajamento de jovens com as disciplinas STEAM. Esta importância será apresentada nos próximos tópicos.
 
-\begin{itemize}
-\selectlanguage{english}
-\item \href{https://www.latex-project.org/}{\LaTeX\index{TeX@\TeX!LaTeX@\LaTeX} Project\LinkIcon}.
-\item \href{https://www.ctan.org/}{Comprehensive \TeX\index{TeX@\TeX} Archive Network (CTAN)\LinkIcon}.
-\item \href{https://www.tug.org/}{\TeX\index{TeX@\TeX} Users Group (TUG)\LinkIcon}.
-\item \href{https://en.wikibooks.org/wiki/LaTeX/}{\LaTeX\index{TeX@\TeX!LaTeX@\LaTeX} \textemdash\ Wikibooks\LinkIcon}.
-\item \href{https://tex.stackexchange.com/}{\TeX\index{TeX@\TeX}-\LaTeX\index{TeX@\TeX!LaTeX@\LaTeX} Stack Exchange\LinkIcon}.
-\end{itemize}
+\subsection{Benefícios da Robótica Prática para o Interesse e Motivação em STEAM}
+As atividades de robótica educacional são reconhecidas como ferramentas eficazes para direcionar a atenção e a motivação dos estudantes para os campos STEAM (7). Pesquisas indicam que a RE pode fomentar significativamente o interesse em tópicos relacionados a STEAM (3). Por exemplo, estudos mostram que atividades práticas de design robótico, especialmente com plataformas como Arduino, despertam o interesse dos alunos em relação à engenharia e tecnologia (7).
 
-\section{Material e Métodos}%
-\label{sect:mat-meth}
+Os estudantes que participam de atividades robóticas frequentemente as descrevem como \emph{divertidas, interessantes, diferentes, difíceis, complexas e demoradas} (7) Apesar da dificuldade e complexidade percebidas, uma grande proporção de estudantes apoia o uso da robótica, indicando que a natureza envolvente das atividades supera os desafios, impactando positivamente sua motivação e participação ativa (7). Essa percepção inicial de diversão e interesse atua como um poderoso motivador, estimulando a curiosidade para o engajamento, mesmo quando as tarefas se tornam mais desafiadoras. O prazer derivado da interação com a robótica serve como um amortecedor psicológico, incentivando a persistência e a participação ativa, transformando a apreensão inicial em um envolvimento mais profundo.
 
-No corpo do documento, o texto deve iniciar na linha abaixo do título das seções.
-Os trabalhos devem ser redigidos em português, usando fonte \ifbool{@LayoutA}{Calibri}{Arial}, tamanho \Unit[\ifbool{@LayoutA}{11}{12}]{pt}\ifbool{@LayoutA}{ (verificar nas opções da classe de documento)}{}, exceto para título (tanto em português quanto em inglês), afiliação dos autores, resumo, palavras-chave, \ENLang{abstract} e \ENLang{keywords}.
-Deve ser aplicado espaçamento\index{espaçamento} simples\index{espaçamento!simples} entre as linhas em todo o trabalho.
-O espaçamento\index{espaçamento} entre parágrafos\index{espaçamento!entre parágrafos} deve ser \ifbool{@LayoutA}{de \Unit[6]{pt} após}{nulo (\Unit[0]{pt})}.
+A natureza prática da robótica resulta em resultados de aprendizagem superiores. Estudos sugerem que os alunos retêm significativamente mais informações (até 70\% mais) ao aprender por meio de atividades robóticas práticas, em comparação com métodos tradicionais baseados em palestras (2). Isso está alinhado com a teoria de aprendizagem construtivista, que enfatiza práticas ativas e interativas (3). Além disso, os robôs educacionais são eficazes na promoção da aprendizagem integrada de STEAM, combinando conceitos de duas ou mais disciplinas STEAM em uma experiência conjunta. Essa abordagem interdisciplinar ajuda os alunos a fazer conexões entre as disciplinas, aprimora as habilidades de resolução de problemas e melhora a alfabetização STEAM e a prontidão para a força de trabalho (3).
 
-Os títulos das seções devem ser posicionados à esquerda e sem ponto final.
-Sugere-se não utilizar subdivisões na \nameref{sect:intro} e evitar muitas subdivisões nas demais seções, exceto se imprescindíveis, conforme exemplos na sequência.
-As páginas devem ser numeradas na parte inferior à direita, conforme este modelo.
-O corpo do texto deve ser justificado, a primeira linha de cada parágrafo deslocada \Unit[\ifbool{@LayoutA}{0,7}{1,25}]{cm}.
+\subsection{Desenvolvimento de Habilidades do Século XXI -- Resolução de Problemas, Pensamento Crítico, Criatividade, Colaboração}
 
-Aspas devem ser utilizadas somente em citações\index{citação} diretas\index{citação!direta}.
-Negrito deve ser utilizado para dar ênfase a termos, frases ou símbolos.
-Itálico deve ser utilizado apenas para palavras em língua estrangeira (\ENLang*{for example}), exceto aquelas já incorporadas pela língua vernácula e nomes próprios.
+Os programas de robótica são fundamentais para o cultivo do pensamento crítico, da criatividade e da colaboração por meio de experiências de aprendizagem imersivas e práticas (1). Evidências empíricas apoiam essas afirmações: estudantes envolvidos em projetos de robótica demonstraram uma melhoria de 25\% em suas habilidades de resolução de problemas em comparação com seus pares (2). Eles também exibem maior inovação, gerando em média de 3 a 5 ideias criativas por projeto (2). Além disso, a participação em equipes de robótica leva à melhoria das habilidades de comunicação e trabalho em equipe (2). Programas mantidos pela textit{For Inspiration and Recognition of Science and Technology} (FIRST), como \textit{First Lego League} (FLL), \textit{FIRST Tech Challenge} (FTC) e \textit{FIRST Robotics Competition} (FRC) se apoiam nesses pilares \cite{firstRobotics2025}.
 
-No caso de uso de alíneas\index{alínea}, obedecer às seguintes indicações:
+Um resultado significativo das atividades de RE é o aprimoramento das habilidades de pensamento computacional, que são reconhecidas tanto como um pré-requisito quanto como um benefício direto da educação STEAM habilitada por robótica (20) A robótica, por sua própria natureza, integra perfeitamente as disciplinas STEM, oferecendo experiências de aprendizagem \emph{hands-on} e \emph{minds-on} (4). Por exemplo, o design de um braço robótico envolve princípios de engenharia mecânica (2), a programação requer lógica de ciência da computação (8), e a análise de movimento pode envolver matemática e física (2). Essa interconexão inerente aborda uma lacuna reconhecida na educação STEAM tradicional, que muitas vezes carece de integração interdisciplinar (10). Ao conceber demonstrações de braços robóticos, é fundamental destacar e conectar explicitamente esses aspectos interdisciplinares. Os cenários devem ilustrar como ciência, tecnologia, engenharia e matemática não são disciplinas isoladas, mas convergem em aplicações robóticas práticas, preparando os alunos para os desafios complexos e interconectados prevalentes nas carreiras STEAM modernas.
 
-\begin{enumerate}[label = {\alphsect}]
-\item cada item de alínea\index{alínea} deve ser ordenado alfabeticamente por letras minúsculas seguidas de (fecha) parêntese;
-\item os itens de alínea\index{alínea} são separados entre si por ponto e vírgula;
-\item o estilo de alínea\index{alínea} constante deste documento pode ser usado para a aplicação automática da formatação correta de alíneas\index{alínea};
-\item o último item de alínea\index{alínea} termina com ponto.
-\end{enumerate}
+\subsection{Eficácia dos Ambientes de Aprendizagem STEAM Informais}
+Museus e centros de ciência, como o \textit{Museum of Science} (16) e o \textit{Fleet Science Center} (17), são projetados para oferecer exposições e atividades ricas em STEAM que cultivam o amor pelo aprendizado para além das paredes da sala de aula convencional (16). Esses ambientes informais proporcionam oportunidades de aprendizagem abertas, exploratórias e voluntárias, permitindo que os alunos vejam a relevância direta e a aplicação do conhecimento STEAM em contextos da vida real. Isso, por sua vez, aumenta seu interesse em STEAM e os incentiva a seguir carreiras relacionadas (3). A \textit{National Science Foundation} (NSF) reconhece a educação científica informal (ISE) por seu papel vital no aumento do interesse, engajamento e compreensão da ciência, tecnologia, engenharia e matemática entre indivíduos de todas as idades (5).
 
-Notas de rodapé: devem ser evitadas\footnote{Utilizar apenas se forem imprescindíveis e não devem ser utilizadas para referenciar documentos}.
+\subsection{Abordagem das Diversas Necessidades de Aprendizagem, Incluindo Crianças Neurodivergentes}
+A robótica e a inteligência artificial possuem um potencial substancial para transformar o desenvolvimento infantil, nutrindo habilidades essenciais como resolução de problemas, comunicação eficaz e regulação emocional (11). Robôs sociais, incluindo modelos como \emph{Pepper} e \emph{NAO} da \textit{SoftBank Robotics}, são ativamente utilizados em ambientes educacionais e clínicos para ensinar regulação emocional, habilidades sociais e empatia. Esses robôs fornecem um ambiente único, livre de julgamentos, para as crianças praticarem essas interações sociais cruciais (11).
 
-\subsection{Título de Seção Secundária}%
-\label{ssect:lvl-2}
+Estudos mostram um potencial inspirador no apoio a crianças com autismo e outros transtornos de desenvolvimento. Por exemplo, um estudo da Universidade de Yale observou melhorias notáveis em habilidades como contato visual e iniciação da comunicação entre crianças autistas que usaram um robô por 30 minutos por dia. O robô \emph{Milo}, projetado para crianças autistas, alcançou 87,5\% de engajamento, significativamente maior do que o engajamento com terapeutas humanos (2-3\%), demonstrando a eficácia da tecnologia como um suplemento aos cuidados humanos (11). Este impacto se estende além do aprendizado técnico de STEAM. Ao incorporar elementos que promovem o desenvolvimento de habilidades socioemocionais e de comunicação, como desafios robóticos colaborativos ou demonstrações de robótica assistiva, os designers de exposições e educadores podem ampliar a proposta de valor da robótica. Isso a torna relevante para uma gama mais ampla de objetivos educacionais e de desenvolvimento, atraindo um público mais diversificado e maximizando o impacto geral do programa.
 
-Exemplo de seção secundária\ifnumgreater{\value{secnumdepth}}{1}{ (\Cref{ssect:lvl-2})}{}.
+\section{Prototipagem de Cenários e Seleção de Braços Robóticos para Engajamento Público}
+A seleção cuidadosa de braços robóticos e a prototipagem de cenários interativos são fundamentais para maximizar o impacto educacional em feiras e exposições. Esta seção aborda alguns alguns desses cuidados. Contudo, diferentes fabricantes, tem propostas educacionais divergentes da aplicação de seus produtos. Essas divergências dificultam a escolha de um braço robótico \emph{ideal} para ampla aplicação em educação STEAM, abrindo oportunidades de pesquisa para a modelagem de um braço robótico com material educacional que possa atender a educação STEAM e aproximar da realidade da indústria.
 
-\subsubsection{Título de Seção Terciária}%
-\label{sssect:lvl-3}
+\subsection{Características de Braços Robóticos Adequados para Demonstrações Educacionais}
+Para demonstrações educacionais, os braços robóticos devem possuir características específicas que garantam a eficácia e a segurança do engajamento de crianças e adolescentes:
+	\begin{description}
+		\item [Facilidade de Uso]: Os braços robóticos devem ser intuitivos e fáceis de operar para o público jovem. Isso inclui suporte a vários níveis de programação, desde codificação baseada em blocos para iniciantes até Python para usuários mais avançados (22). Exemplos de plataformas amigáveis incluem mBot2 (22), LEGO Mindstorms EV3 (12), VEX Robotics (1) e vários kits baseados em Arduino (7). O Dobot Magician, por exemplo, oferece diversos métodos de controle, como EEG, Bluetooth, WiFi, Mobile, PC, Gesto e Joystick, juntamente com interfaces de programação gráfica (25). A capacidade de oferecer diferentes modos de interação garante que o braço robótico seja acessível a uma ampla faixa etária, desde crianças pequenas que podem operar com um joystick até adolescentes que podem programar o mesmo braço com código.
+		\item [Apelo Visual]: O design do braço robótico pode influenciar significativamente o engajamento. Embora opções DIY simples, utilizando materiais como papelão ou palitos de picolé, possam ser eficazes para a construção prática (27), designs mais sofisticados e visualmente atraentes, incluindo robôs biomiméticos (inspirados em movimentos de animais) (3), podem cativar imediatamente e criar uma conexão com o público jovem (32). Um braço que se assemelha a um membro humano ou animal, por exemplo, pode gerar uma curiosidade natural e um desejo de interagir.
+		\item [Custo-Benefício]: A acessibilidade é um desafio chave na robótica educacional (3). Há uma clara necessidade de robôs educacionais de baixo custo e fáceis de usar (3). Kits acessíveis como Adeept (com preços em torno de US\$ 70-80) (26) e opções DIY (por exemplo, projetos baseados em Arduino usando materiais comuns) (27) são viáveis. Para recursos mais avançados, braços educacionais como o Dobot Magician são considerados com bom custo-benefício, dadas suas capacidades (25). Robôs colaborativos (cobots) de fabricantes como a Universal Robots também estão se tornando mais acessíveis economicamente para fins educacionais e de exibição pública (37).
+		\item [Durabilidade e Segurança]: Para interação pública contínua, a robustez e a segurança são primordiais (3). Robôs colaborativos (cobots) são projetados especificamente para interação segura humano-robô, incorporando recursos como limitação de potência e força, monitoramento de velocidade e separação, materiais de construção leves e bordas arredondadas (37). A adesão a padrões internacionais de segurança (por exemplo, ISO 10218, ISO 13482, ANSI/RIA R15.06, UL 1740) é necessária para qualquer robô operando em espaços públicos (42). Embora a qualidade de construção do Dobot Magician seja geralmente boa para uso industrial leve, a durabilidade específica a longo prazo para interação pública contínua não é extensivamente detalhada (25). A durabilidade dos cabos também é uma consideração de design para alguns braços robóticos (44).
+		\item [Modularidade e Expansibilidade]: Kits robóticos que permitem configurações versáteis e suportam a integração de sensores e módulos adicionais (por exemplo, Makeblock mBot Ultimate, VEX Robotics, Dobot Magician) (22) permitem uma gama mais ampla de atividades interativas e adaptabilidade a diferentes objetivos de aprendizagem, garantindo que o investimento no equipamento possa ser aproveitado em diversas demonstrações.
+	\end{description}
 
-Exemplo de seção terciária\ifnumgreater{\value{secnumdepth}}{2}{ (\Cref{sssect:lvl-3})}{}.
 
-\paragraph{Título de seção quaternária}%
-\label{prgh:lvl-4}
+A concepção de exposições com braços robóticos deve considerar a criação de níveis de interação e complexidade variados. Uma demonstração básica pode permitir o controle direto por joystick para crianças mais novas, enquanto uma estação adjacente pode permitir que estudantes mais velhos programem o mesmo braço usando código baseado em blocos ou Python. Essa abordagem em camadas garante que a exposição permaneça envolvente e educacional em uma ampla faixa etária, facilitando uma jornada de aprendizagem progressiva e maximizando o impacto geral.
 
-Exemplo de seção quaternária\ifnumgreater{\value{secnumdepth}}{3}{ (\Cref{prgh:lvl-4})}{}.
+\subsection{Atividades Interativas e Desafios para Braços Robóticos}
+A escolha de atividades interativas é crucial para o engajamento e a aprendizagem. As seguintes categorias de atividades podem ser implementadas:
+	\begin{itemize}
+		\item Tarefas de \emph{Pick-and-Place}: Essas são atividades fundamentais de robótica e altamente envolventes para crianças. Podem envolver a classificação de objetos por cor ou forma, ou a organização de itens em uma sequência, simulando processos de linha de montagem (25).
+		\item Desenho/Escrita: Braços robóticos equipados com suportes de caneta podem ser programados para desenhar textos personalizados, padrões intrincados ou até mesmo replicar obras de arte famosas, fomentando a criatividade e demonstrando controle de precisão (12).
+		\item Processos Industriais Simulados: As exposições podem imitar a automação de fábricas do mundo real, utilizando braços robóticos com esteiras transportadoras e vários sensores (por exemplo, fotoelétricos, sensores de cor) para classificar, montar ou embalar itens. Isso proporciona uma compreensão tangível das aplicações industriais e da eficiência da robótica (25).
+		\item Resolução de Labirintos/Planejamento de Trajetória: Os alunos podem programar braços robóticos para navegar em um labirinto definido ou pegar objetos ao longo de um caminho complexo, evitando obstáculos (28). Isso introduz conceitos como cinemática, cinemática inversa e algoritmos básicos, mostrando como os robôs \emph{pensam} para realizar tarefas (32).
+		\item Desafios de Biomimética: Projetar braços robóticos que emulam movimentos ou funções observadas em animais (por exemplo, a mecânica da mandíbula de uma cobra, o lançamento de teias de uma aranha ou a escalada de um camaleão) pode ser altamente criativo e educacional, conectando a biologia à engenharia (3). 
+		\item Construção Simples de Mãos Robóticas: Atividades envolventes podem incluir a construção de uma mão robótica básica usando materiais domésticos facilmente disponíveis, como canudos e barbante, para demonstrar princípios fundamentais de preensão e manipulação (30).
+		\item Jogos Colaborativos: Projetar jogos interativos onde humanos e robôs cooperam ou competem pode aumentar o engajamento. Exemplos incluem \emph{Corrida de Robôs} (competir contra um braço robótico em um jogo) ou jogos de \emph{Cooperação}, que podem ser vagamente ligados a aplicações do mundo real, como robôs cirúrgicos (12).
+	\end{itemize}
 
-\subparagraph{Título de seção quinária}%
-\label{sprgh:lvl-5}
 
-Exemplo de seção quinária\ifnumgreater{\value{secnumdepth}}{4}{ (\Cref{sprgh:lvl-5})}{}.
 
-\subsection{Citações e Referências}%
-\label{ssect:cit-ref}%
-\index{citação}
+É fundamental que os cenários com braços robóticos sejam cuidadosamente elaborados em torno de problemas ou aplicações do mundo real que sejam relevantes para os jovens. Em vez de demonstrações abstratas de movimento, as exposições devem apresentar desafios que imitem tarefas industriais, tecnologias assistivas ou até mesmo empreendimentos artísticos criativos. Essa contextualização aumenta a motivação intrínseca, aprofunda a compreensão e conecta diretamente a robótica a possíveis caminhos de carreira e contribuições sociais mais amplas, tornando a experiência de aprendizagem mais impactante e memorável.
 
-As citações\index{citação} devem obedecer ao sistema autor-data e corresponder com a Norma Brasileira\index{Norma Brasileira} (NBR\index{NBR\GobbleComma|see{Norma Brasileira}}) 10520:2023 da Associação Brasileira de Normas Técnicas (ABNT).
-Por exemplo, as citações\index{citação} indiretas\index{citação!indireta} na sequência:
 
-\begin{itemize}
-\item Implícitas\index{citação!indireta!implícita}:
-\begin{itemize}
-\item \ldots\ \cite{Alencar2007}.
-\item \ldots\ \cite{Kalakota2002,Ramos2003}.
-\item \ldots\ \cite{Carvalho2004,Andujar2006,Purcidonio2008}.
-\item \ldots\ \cite{Alencar2007,Carvalho2004}.
-\end{itemize}
-\item Explícitas\index{citação!indireta!explícita}:
-\begin{itemize}
-\item \textcite{Alencar2007} afirmam que\ldots%
-\item \ldots\ conforme \textcite{Kalakota2002,Ramos2003}.
-\item Segundo \textcite{Carvalho2004,Andujar2006,Purcidonio2008}, \ldots%
-\item \ldots\ as definições de \textcite{Alencar2007,Carvalho2004}.
-\end{itemize}
-\end{itemize}
 
-Citações\index{citação} diretas\index{citação!direta} curtas (de até três linhas) acompanham o corpo do texto e se destacam com aspas duplas.
-Caso o texto original já contenha aspas, estas devem ser substituídas por aspas simples, conforme exemplos na sequência.
-\textcite[10]{Fulano2021} afirma que \enquote{\textelp{} é importante a utilização das citações\index{citação} no texto corretamente}.
-Além disso: \Citation[brazilian]{\cite[\ppno~20, grifo do autor]{Fulano2021}}{Citar trechos de \enquote{outros autores} sem os referenciar pode ser caracterizado plágio}.
-Para as citações\index{citação} diretas\index{citação!direta} longas (com mais de três linhas), estas devem ser transcritas em parágrafo distinto, por exemplo:
 
-\begin{DisplayCitation}[brazilian]{\cite[150]{Fulano2021}}
-Toda citação\index{citação} direta\index{citação!direta} com mais de três linhas é considerada uma citação\index{citação} direta\index{citação!direta} longa.
-Este tipo de citação\index{citação} deve ser escrita sem aspas, em parágrafo distinto, com fonte de tamanho \Unit[10]{pt}, espaçamento\index{espaçamento} simples\index{espaçamento!simples} e com recuo de \Unit[4]{cm} da margem esquerda, terminando na margem direita, conforme este exemplo
-\end{DisplayCitation}
+\subsection{Integração de Conceitos de IA e Aprendizado de Máquina em Demonstrações}
+A inclusão de conceitos de Inteligência Artificial (IA) e Aprendizado de Máquina (ML) em demonstrações de braços robóticos eleva o nível de engajamento e a profundidade da aprendizagem. Robôs com capacidades de IA integradas oferecem experiências interativas avançadas, como reconhecimento de fala, controle por gestos e reconhecimento de objetos (24).
 
-Conforme exemplos no arquivo-fonte deste modelo, citações\index{citação} diretas\index{citação!direta} curtas e longas podem ser inseridas por meio do pacote \LaTeX\index{TeX@\TeX!LaTeX@\LaTeX} \texttt{utfpr-ict-report} usando:
+As demonstrações podem apresentar robôs de aprendizagem conversacionais alimentados por IA (por exemplo, Miko) (56), carros autônomos em miniatura (51) ou sistemas que podem reconhecer e categorizar objetos, como brinquedos (51). Os alunos podem ser introduzidos aos conceitos fundamentais do aprendizado de máquina treinando um robô para reconhecer padrões (por exemplo, gestos de mão) e aplicando esse aprendizado para controlar as ações do robô (51). Plataformas de aprendizagem virtual também podem fornecer um ambiente seguro e acessível para explorar conceitos de robótica com IA sem a necessidade de hardware físico (23).
 
-\begin{itemize}
-\item Comando \LaTeX\index{TeX@\TeX!LaTeX@\LaTeX} \texttt{{\textbackslash}Citation}.
-\item Ambiente \LaTeX\index{TeX@\TeX!LaTeX@\LaTeX} \texttt{DisplayCitation}.
-\end{itemize}
+\subsection{Protocolos de Segurança para Interação Humano-Robô em Espaços Públicos}
+A segurança é a preocupação primordial em qualquer demonstração pública envolvendo robótica, especialmente com crianças:
 
-A exatidão das referências é de responsabilidade dos autores.
-As referências devem incluir apenas aquelas centrais e relevantes à problemática abordada, priorizando os periódicos, e apenas as citadas no texto devem ser incluídas na seção \nameref{sect:ref}.
-As referências devem seguir a norma vigente NBR 6023:2018 da ABNT\@.
-Como sugestão, utilizar o Sistema de Gestão de Normas e Documentos Regulatórios (GEDWeb) da UTFPR (\url{https://www.gedweb.com.br/utfpr}).
-Ver exemplos na seção \nameref{sect:ref}.
+	\begin{description}
+		\item [Priorizar Robôs Colaborativos (Cobots)]: Para demonstrações públicas que envolvem interação direta com crianças, os robôs colaborativos (cobots) são a escolha preferencial. Esses robôs são projetados especificamente para interação segura humano-robô em espaços de trabalho compartilhados, contando com recursos de segurança intrínsecos, como construção leve, bordas arredondadas e limitações de velocidade e força (37).
+		
+		\item [Implementar Recursos Essenciais de Segurança]:
+			\begin{itemize}
+				\item Limitação de Potência e Força: Os cobots devem ser configurados para limitar sua saída de força, garantindo que, mesmo em caso de contato acidental, o risco de lesão seja minimizado (41).
+				\item Monitoramento de Velocidade e Separação: A velocidade do robô deve se ajustar dinamicamente com base na proximidade de humanos, diminuindo ou parando se uma pessoa entrar em uma zona de segurança predefinida (41).
+				\item Paradas de Emergência Facilmente Acessíveis: Botões de parada de emergência claramente marcados e de fácil acesso (por exemplo, botões de palma, cordas de puxar) devem ser estrategicamente posicionados em todas as zonas de interação, anulando todos os outros controles (39).
+				\item Zonas Seguras Programáveis: Definir e programar áreas específicas onde o movimento do robô é restrito, especialmente em ambientes públicos lotados (38).
+				\item Barreiras Físicas/Proteções (conforme necessário): Embora os cobots visem a interação direta, uma avaliação de risco completa ainda pode exigir o uso de barreiras intertravadas ou proteções fixas para certos movimentos de alto risco ou para braços robóticos mais pesados/rápidos. Barreiras de conscientização (por exemplo, grades baixas) podem definir perímetros em cenários com riscos mínimos (39).
+			\end{itemize}
+		\item Adesão a Padrões e Certificações de Segurança: A conformidade com os padrões internacionais de segurança (por exemplo, ISO 10218, ISO 13482, ANSI/RIA R15.06, UL 1740) é inegociável para robôs que operam em espaços públicos (42) Organizações e empresas são legal e eticamente responsáveis pela operação segura de seus siSTEAMas robóticos (45).
+		\item Treinamento Abrangente de Operadores: Todo o pessoal envolvido na operação ou supervisão de demonstrações de braços robóticos deve receber treinamento completo em protocolos de segurança, procedimentos operacionais e planos de resposta a emergências (39).
+		\item Avaliação Rigorosa de Riscos: Uma avaliação de risco detalhada e específica para cada exposição deve ser realizada para identificar todos os perigos potenciais e implementar salvaguardas apropriadas e em várias camadas (37).
+		\item Durabilidade e Manutenção: Selecionar braços robóticos conhecidos por sua robustez e durabilidade para uso público contínuo é fundamental. Embora dados específicos de durabilidade a longo prazo para todos os robôs educacionais possam ser limitados, a escolha de modelos com boa qualidade de construção (por exemplo, Dobot Magician para uso industrial leve) (25) e a garantia da durabilidade de componentes a longo prazo (por exemplo, cabos) (44) são questões para determinar a melhor escolha do equipamento em campo.
+	\end{description}
+	
 
-Citações\index{citação} e referências podem ser inseridas usando os comandos do pacote \href{https://ctan.org/pkg/biblatex/}{Bib\LaTeX\index{TeX@\TeX!LaTeX@\LaTeX!BibLaTeX@Bib\LaTeX}\LinkIcon}, conforme exemplos no arquivo-fonte deste modelo.
-Os dados de cada referência podem ser obtidos de um arquivo \href{https://www.bibtex.org/}{Bib\TeX\index{TeX@\TeX!LaTeX@\LaTeX!BibTeX@Bib\TeX}\LinkIcon} (\texttt{*.bib}), geralmente na própria página de acesso ou \ENLang{download} da publicação (artigos, livros, etc.) ou, ainda, a partir do Google Acadêmico, etc.
-Diversas ferramentas podem ser usadas para gerar ou editar entradas de arquivos \href{https://www.bibtex.org/}{Bib\TeX\index{TeX@\TeX!LaTeX@\LaTeX!BibTeX@Bib\TeX}\LinkIcon} (\texttt{*.bib}), por exemplo: \ENLang{\href{https://zbib.org/}{ZoteroBib\LinkIcon} e \href{https://truben.no/latex/bibtex/}{Bib\TeX\index{TeX@\TeX!LaTeX@\LaTeX!BibTeX@Bib\TeX} Editor\LinkIcon}}.
+\section{Considerações}
+A aplicação estratégica de braços robóticos em feiras de tecnologia e mostras científicas oferece um potencial imenso para motivar e engajar crianças e adolescentes na pesquisa robótica e nos campos STEAM em geral. A análise apresentada neste relatório sublinha que o sucesso dessas iniciativas depende de uma abordagem multifacetada que integra o design de exposições envolventes, a seleção de tecnologias apropriadas, a implementação de protocolos de segurança rigorosos e a avaliação contínua do impacto.
 
-\subsection{Equações Matemáticas}%
-\label{ssect:eq-math}
+A natureza prática e interativa da robótica educacional não apenas desperta o interesse inicial, mas também fomenta o desenvolvimento de habilidades cruciais para o século XXI, como pensamento crítico, resolução de problemas e colaboração. A capacidade de contextualizar a aprendizagem em cenários do mundo real e de adaptar as atividades a diversas faixas etárias e necessidades de aprendizagem amplifica o impacto educacional. Além disso, a robótica oferece uma plataforma única para abordar o desenvolvimento socioemocional e promover a inclusão, especialmente para crianças neurodivergentes.
 
-As equações matemáticas devem aparecer com um deslocamento de \Unit[0,5]{cm} a partir da margem esquerda, em fonte Calibri tamanho \Unit[10]{pt}.
-Números arábicos devem ser usados em equações, inseridos entre parênteses na margem direita, como ilustrado na \Cref{eq:u}:
-\begin{equation}%
-\label{eq:u}
-u = \beta \operatorname{sen} \left(\pi x\right) \frac{\left(e^{2x} - 1\right) \left(e^y - 1\right)}{\left(e^2 - 1\right) \left(e - 1\right)}
-\end{equation}
+\section{Proposta de pesquisa}
+Para otimizar ainda mais a aplicação de braços robóticos em ambientes educacionais informais, as seguintes recomendações são propostas:
 
-Equações podem ser inseridas usando o ambiente \LaTeX\index{TeX@\TeX!LaTeX@\LaTeX} \texttt{equation}, conforme exemplo no arquivo-fonte deste modelo.
-Símbolos matemáticos (ou equações mais simples) podem ser inseridos ao longo do texto de um parágrafo usando o ambiente \LaTeX\index{TeX@\TeX!LaTeX@\LaTeX} \texttt{math} (ou o atalho \LaTeX\index{TeX@\TeX!LaTeX@\LaTeX} \texttt{\textbackslash(\ldots\textbackslash)} ou o atalho \TeX\index{TeX@\TeX} \texttt{\$\ldots\$}), por exemplo: $A$, $\mathrm{Re}$, etc.
-Diversas ferramentas podem ser usadas para gerar ou editar equações em \LaTeX\index{TeX@\TeX!LaTeX@\LaTeX}, por exemplo: \ENLang{\href{https://formulasheet.com/}{Formula Sheet\LinkIcon} e \href{https://www.tutorialspoint.com/latex_equation_editor.htm}{\LaTeX\index{TeX@\TeX!LaTeX@\LaTeX} Equation Editor (\textit{by} Tutorials Point)\LinkIcon}}.
 
-\section{Resultados e Discussão}%
-\label{sect:res-disc}
-
-Independentemente da ilustração (figura, fluxograma, fotografia, gráfico, quadro, entre outras) ou tabela inserida no trabalho, sua identificação deve aparecer na parte superior.
-Esta identificação deve ser precedida da palavra designativa, seguida de seu número de ordem de ocorrência no texto, em algarismos arábicos, travessão e do respectivo título e com fonte de tamanho \Unit[10]{pt}.
-Após a ilustração ou tabela, na parte inferior, indicar a fonte consultada (mesmo sendo produção do próprio autor), legenda, notas e outras informações necessárias à sua compreensão (se houver).
-
-\subsection{Ilustrações}%
-\label{ssect:ill}
-
-Figuras, fluxogramas, fotografias, gráficos e quadros podem ser inseridos usando os ambientes \LaTeX\index{TeX@\TeX!LaTeX@\LaTeX} \texttt{figure}, \texttt{flowchart}, \texttt{photograph}, \texttt{graph} e \texttt{tabframed}, respectivamente, conforme exemplos no arquivo-fonte deste modelo.
-Cada ilustração deve ser citada no texto e inserida o mais próximo possível do trecho a que se refere.
-A \Cref{fig:example-movie} é um exemplo deste tipo de ilustração que contém duas subfiguras.
-
-\begin{figure}[!htbp]
-\SetCaptionWidth{\ifbool{@LayoutA}{0.7}{0.5}\linewidth+\columnsep}
-\caption{Exemplo de figura:\\ (a)~primeira subfigura e (b)~segunda subfigura}%
-\label{fig:example-movie}
-\begin{tabular}{@{}cc@{}}
-\includegraphics[width = \ifbool{@LayoutA}{0.35}{0.25}\linewidth, page = 1]{example-movie}  &
-\includegraphics[width = \ifbool{@LayoutA}{0.35}{0.25}\linewidth, page = 31]{example-movie} \\
-\textbf{(a)} & \textbf{(b)}
-\end{tabular}
-\SourceOrNote{\textcite{Scharrer2018}}
-\end{figure}
-
-O \Cref{fcht:ex-algorithm} é um dos vários exemplos deste tipo de ilustração que pode ser gerado ou editado na ferramenta \ENLang{\href{https://www.lucidchart.com/}{Lucidchart\LinkIcon}}, entre outras.
-
-\begin{flowchart}[!htbp]
-\SetCaptionWidth{\ifbool{@LayoutA}{0.7}{0.5}\linewidth}
-\caption{Exemplo de fluxograma de algoritmo}%
-\label{fcht:ex-algorithm}
-\includegraphics[width = \CaptionWidth]{fcht-ex-algorithm}
-\SourceOrNote{autoria própria (\YearNum)}
-\end{flowchart}
-
-Como mostrado na \Cref{phot:pg-campus}, objetos flutuantes (ilustrações) podem adicionalmente receber um código QR (\ENLang*{Quick Response} ou Resposta Rápida) contendo: URL (\ENLang*{Uniform Resource Locator} ou Localizador Uniforme de Recursos) ou informações complementares.
-
-\begin{photograph}[!htbp]
-\SetCaptionWidth{\ifbool{@LayoutA}{0.6}{0.5}\linewidth}
-\caption{Fachada do campus Ponta Grossa da UTFPR}%
-\label{phot:pg-campus}
-\savebox0{\includegraphics[width = \CaptionWidth]{phot-pg-campus}}
-\usebox0%
-\llap{%
-  \raisebox{\ht0-\height}{%
-    \href{https://www.utfpr.edu.br/campus/pontagrossa}{%
-      \includegraphics[height = 10mm]{phot-pg-campus-qr-code}%
-    }%
-  }%
-}
-\SourceOrNote{\textcite{UTFPR2018}}
-\end{photograph}
-
-O \Cref{grph:t-x} foi produzido usando o ambiente \LaTeX\ \texttt{tikzpicture} do pacote \LaTeX\ \texttt{tikz} a partir do arquivo \texttt{grph-t-x.tex} em \texttt{./Figures/}.
-
-\begin{graph}[!htbp]
-\SetCaptionWidth{\ifbool{@LayoutA}{0.7}{0.6}\linewidth}
-\caption{Exemplo de gráfico}%
-\label{grph:t-x}
-\includegraphics[width = \CaptionWidth]{grph-t-x}
-\SourceOrNote{autoria própria (\YearNum)}
-\end{graph}
-
-Quadros devem ser inseridos seguindo a estrutura demonstrada no \Cref{tfrm:typography}.
-Caso os dados sejam inéditos e provenientes de uma pesquisa realizada pelos próprios autores do trabalho, essa especificação deve constar na fonte com o ano da pesquisa de campo, por exemplo: autoria própria (\YearNum).
-
-\begin{tabframed}[!htbp]
-\caption{Tipografia dos títulos de seções}%
-\label{tfrm:typography}
-\begin{tabularx}{\linewidth}{?{}X|X?{}}%% CHKTEX 44
-\toprule%
-\multicolumn{1}{?{}Y|}{\textbf{Com numeração de seções}} &
-\multicolumn{1}{Y?{}}{\textbf{Sem numeração de seções}}  \\ \midrule%
-\textbf{1 TÍTULO DE SEÇÃO PRIMÁRIA}          & \textbf{TÍTULO DE SEÇÃO PRIMÁRIA} \\ \midrule%
-\textbf{1.1 Título de Seção Secundária}      & TÍTULO DE SEÇÃO SECUNDÁRIA        \\ \midrule%
-\textbf{1.1.1 Título de Seção Terciária}     & Título de Seção Terciária         \\ \midrule%
-\textbf{1.1.1.1 Título de seção quaternária} & Título de seção quaternária       \\ \midrule%
-\textbf{1.1.1.1.1 Título de seção quinária}  & \textit{Título de seção quinária} \\ \bottomrule%
-\end{tabularx}
-\SourceOrNote{autoria própria (\YearNum)}
-\end{tabframed}
-
-\subsection{Tabelas}%
-\label{ssect:tab}
-
-Assim como quadros, tabelas devem estar centralizadas e conter apenas dados imprescindíveis, não repetindo dados já inseridos no texto, ou vice-versa, evitando-se que sejam muito extensas.
-O formato de tabela pode ser observado na \Cref{tab:example}.
-
-\begin{table}[!htbp]
-\SetCaptionWidth{0.5\linewidth}
-\caption{Exemplo de tabela}%
-\label{tab:example}
-\begin{tabularx}{\CaptionWidth}{@{}XY@{}}
-\toprule%
-\multicolumn{1}{Y}{\textbf{Idade}}           &
-\multicolumn{1}{Y}{\textbf{Percentual (\%)}} \\ \midrule%
-Até 20 anos     & 0  \\
-De 21 a 30 anos & 10 \\
-De 31 a 40 anos & 20 \\
-De 41 a 50 anos & 30 \\ \bottomrule%
-\end{tabularx}
-\SourceOrNote{adaptada de \textcite{Beltrano2021}}
-\end{table}
-
-Tabelas podem ser inseridas usando o ambiente \LaTeX\index{TeX@\TeX!LaTeX@\LaTeX} \texttt{table}, conforme exemplo no arquivo-fonte deste modelo.
-Diversas ferramentas podem ser usadas para gerar ou editar tabelas em \LaTeX\index{TeX@\TeX!LaTeX@\LaTeX}, por exemplo: \ENLang{\href{https://www.tablesgenerator.com/}{Tables Generator\LinkIcon} e \href{https://www.latex-tables.com/}{\LaTeX\index{TeX@\TeX!LaTeX@\LaTeX} Tables Editor\LinkIcon}}.
-
-\section{Conclusões}%
-\label{sect:concl}
-
-As conclusões ou considerações finais podem ser apresentadas como uma lista de itens, enfatizando as contribuições do trabalho:
-
-\begin{itemize}
-\item Primeiro item de conclusão.
-\item Segundo item de conclusão.
-\item Terceiro item de conclusão.
-\item Quarto item de conclusão.
-\item Quinto item de conclusão.
-\end{itemize}
-
-\ifbool{@LayoutA}{%
-  \section*{Agradecimentos}[sect:ack]
-
-  Seção obrigatória em trabalhos que receberam bolsa ou auxílio financeiro.
-  Deve apresentar os agradecimentos aos principais órgãos de fomento (bolsa ou auxílio financeiro), instituições e pessoas que contribuíram para a realização do trabalho.
-  Não exceder 50 palavras.
-}{%
-  \begin{InfoSection}{Agradecimentos}
-  Seção obrigatória que serve para agradecer instituições e pessoas que contribuíram para a realização do trabalho, especialmente órgãos de fomento que viabilizaram recursos no formato de bolsa e auxílio financeiro.
-  \end{InfoSection}
-
-  \begin{InfoSection}{Material suplementar}
-  Seção opcional que serve para informar ao leitor se há algum material suplementar ao trabalho e onde o mesmo pode ser obtido.
-  Do contrário, remover.
-  \end{InfoSection}
-
-  \begin{InfoSection}{Disponibilidade de código}
-  Seção opcional que serve para declarar se algum código desenvolvido está disponível para terceiros, explicitando onde o mesmo pode ser obtido.
-  Do contrário, explicitar a razão para a indisponibilidade.
-  Remover caso nenhum código tenha sido desenvolvido.
-  \end{InfoSection}
-
-  \begin{InfoSection}{Conflito de interesse}
-  Seção obrigatória que serve para os autores declararem se possuem ou não algum conflito de interesse.
-  Não havendo, sugere-se declarar \enquote{Não há conflito de interesse}.
-  \end{InfoSection}
-
-%   \begin{InfoSection}{Objetivos de Desenvolvimento Sustentável (ODS)}
-%   Este trabalho pretende contribuir nos seguintes Objetivos de Desenvolvimento Sustentável (ODS):\\%
-%   \parbox[t][0.75\BottomLine+0.5\baselineskip][c]{\linewidth}{\PrintSDGStamps[\baselineskip]}
-%   \end{InfoSection}
-}
-
-\printbibliography%% Referências
-
-%% Elementos pós-textuais (opcionais)
-%% Editar o {Arquivo} para alterar: Glossário, Apêndices, Anexos e Índice
-%% Remissivo.
-% \input{./Extras/post-textual}
-
-%% Fim do documento
 \end{document}

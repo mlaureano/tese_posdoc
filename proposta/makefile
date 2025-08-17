@@ -4,7 +4,7 @@
 ## This makefile provides commands to make compiling LaTeX source files.
 
 ## Source and base name
-src :=	utfpr-article.tex
+src :=	proposta.tex
 ifeq ($(strip $(src)),)
   src :=	$(shell read -p "Enter source filename with 3-digits extension: " src; echo $$src)
 endif
